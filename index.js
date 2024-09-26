@@ -1,5 +1,6 @@
 const { readFile } = require('fs').promises;
 const express = require('express');
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -8,6 +9,6 @@ app.get('/', async (req, res) => {
   res.send(data);
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
