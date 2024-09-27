@@ -1,14 +1,17 @@
-const { readFile } = require('fs').promises;
 const express = require('express');
-const port = process.env.PORT || 3000;
-
+const path = require('path');
 const app = express();
 
-app.get('/', async (req, res) => {
-  const data = await readFile('./index.html', 'utf8');
-  res.send(data);
+// Set the public folder as root directory for static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Define routes
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
