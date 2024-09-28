@@ -10,7 +10,7 @@ function testDB(callback) {
         password:process.env.DB_PASS, 
         database:process.env.DB_NAME, 
         port:3306, 
-        ssl:{ca:process.env.DB_CERT}
+        //ssl:{ca:process.env.DB_CERT}
       };
     
     const conn = new mysql.createConnection(config);
