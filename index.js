@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/users', (req, res) => {
   testDB((data) => {
-      res.json(data);  // Send the data as JSON
+    res.json(data);  // Send the data as JSON
   });
 });
 

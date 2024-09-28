@@ -18,6 +18,7 @@ function testDB(callback) {
         function (err) {
             if (err) {
                 console.log("!!! Cannot connect !!! Error:");
+                callback(err);
                 throw err;
             }
             else {
@@ -29,8 +30,13 @@ function testDB(callback) {
         function readData(callback){
             conn.query('SELECT * FROM user',
                 function (err, results, fields) {
-                    if (err) throw err;
-                    else console.log('Selected ' + results.length + ' row(s).');
+                    if (err) {
+                        callback(err);
+                        throw err;
+                    }   
+                    else {
+                        console.log('Selected ' + results.length + ' row(s).');
+                    }
                     for (i = 0; i < results.length; i++) {
                         console.log('Row: ' + JSON.stringify(results[i]));
                     }
