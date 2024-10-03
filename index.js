@@ -4,7 +4,7 @@
  Description: 
   This file is the entry point for the application. It sets up the express server and defines the routes.
  Date Created: 2024-09-26
- Last Modified: 2024-09-30
+ Last Modified: 2024-10-01
 */
 
 // imports
