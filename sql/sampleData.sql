@@ -1,23 +1,25 @@
--- Select the database
 USE powerproDatabase;
-
--- Insert sample data
-INSERT INTO `User` (`Username`, `Password`, `FirstName`, `LastName`, `Street`, `City`, `State`, `Zip`) 
+-- Insert sample data into 'User' table
+INSERT INTO `User` (Username, Password, FirstName, LastName, Street, City, State, Zip) 
 VALUES 
-('james', 'password127', 'james', 'donny', '123 Sub St', 'Somecity', 'FL', '12346'),
-('jane53', 'password128', 'jane', 'doe', '123 Main St', 'Somecity', 'FL', '12345'),
-('john32', 'password1738', 'john', 'smith', '123 Elm St', 'Somecity', 'FL', '12344');
+('jdoe', 'password123', 'John', 'Doe', '123 Elm St', 'Springfield', 'IL', '62704'),
+('asmith', 'securepass', 'Anna', 'Smith', '456 Maple St', 'Chicago', 'IL', '60605'),
+('bwayne', 'batmanrocks', 'Bruce', 'Wayne', '1007 Mountain Dr', 'Gotham', 'NY', '10001');
 
-INSERT INTO `Product` (`ProductName`, `AvailableQuantity`) 
+-- Insert sample data into 'Product' table
+INSERT INTO `Product` (ProductName, AvailableQuantity, Price, Popularity, Category_Wide, Category_Narrow)
 VALUES 
-('Product B', 40),
-('Product C', 20),
-('Product D', 10),
-('Product E', 5),
-('Product F', 2);
+('Compression Shirt', 50, 999.99, 5, 'Male', 'Tops'),
+('Running Shorts', 30, 79.99, 3, 'Male', 'Bottoms'),
+('Arm Sleeves', 100, 120.00, 4, 'Male', 'Tops'),
+('Basketball Shoes', 200, 699.99, 5, 'Male', 'Footwear'),
+('Wireless Headphones', 75, 199.99, 4, 'Accessories', 'Headphones');
 
-INSERT INTO `Order` (`UserID`, `ProductID`)
+-- Insert sample data into 'Purchase' table
+INSERT INTO `Purchase` (UserID, ProductID, PurchaseDate)
 VALUES 
-(2, 2),
-(2, 3),
-(3, 1);
+(1, 1, '2023-09-15'),
+(2, 3, '2023-09-20'),
+(1, 2, '2023-10-01'),
+(3, 4, '2023-10-03'),
+(2, 5, '2023-10-07');

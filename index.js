@@ -10,7 +10,7 @@
 // imports
 const express = require('express');
 const path = require('path');
-const getData = require('./db/db');
+const { getUsers, getProducts, getPurchases } = require('./db/db');
 
 /* Express app configuration */
 // create express app instance
@@ -22,26 +22,26 @@ app.use(express.static(path.join(__dirname, 'public'))); // set the public folde
 // static routes
 // home route -- serves the index.html file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index2.html'));
 });
 
 // data routes
 // users route -- serves users table from the database as JSON
 app.get('/users', (req, res) => {
-  getData((data) => {
-    res.json(data.users); 
+  getUsers((data) => {
+    res.json(data); 
   });
 });
 
 app.get('/products', (req, res) => {
-  getData((data) => {
-    res.json(data.products); 
+  getProducts((data) => {
+    res.json(data); 
   });
 });
 
-app.get('/orders', (req, res) => {
-  getData((data) => {
-    res.json(data.orders); 
+app.get('/purchases', (req, res) => {
+  getPurchases((data) => {
+    res.json(data); 
   });
 });
 /* End route definitions */
