@@ -18,7 +18,7 @@ const config = {
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     port: 3306,
-    ssl: { ca: process.env.DB_CERT }
+    //ssl: { ca: process.env.DB_CERT }
 };
 
 // Create a reusable connection function
