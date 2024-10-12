@@ -144,9 +144,9 @@ header {
   width: 100%; /* Increased width */
   border-radius: 12px;
   border: 1px solid #ddd;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
   background-color: #fff;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -159,6 +159,13 @@ header {
 
 .textInput {
   width: 100%;
+}
+
+.validationError {
+  grid-column: 2;
+  column-span: all;
+  color: red;
+  font-size: 12px;
 }
 
 .product {

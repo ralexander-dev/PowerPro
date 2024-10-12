@@ -8,7 +8,7 @@
 */
 
 // !!! development variable to switch between database and JSON file
-const IS_DEV = false;
+const IS_DEV = true;
 
 // imports
 const express = require('express');
@@ -21,18 +21,20 @@ const app = express(); // create express app instance
 app.use(express.static(path.join(__dirname, 'public'))); // set the public folder as root directory for static files
 app.use(express.urlencoded({extended: false})); // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.json()); // Parse JSON bodies (as sent by clients)
+app.set('view engine', 'hbs'); // set the view engine to HBS
 /* End Express app configuration */
 
 /* Route definitions */
 // static routes
 // home route -- serves the index.html file
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index2.html'));
+  //res.sendFile(path.join(__dirname, 'public', 'index2.html'));
+  res.render('index', { title: 'Home' });
 });
 
 // signup route -- serves the signUp.html file
 app.get('/signup', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'pages', 'signUp.html'));
+  res.render('signup');
 });
 
 // signup POST route -- handles form submission

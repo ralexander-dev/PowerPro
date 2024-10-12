@@ -65,4 +65,11 @@ function getPurchases(callback) {
     }
 }
 
-module.exports = { getUsers, getProducts, getPurchases };
+function checkForUser(username, callback) {
+    const data = loadJSON();
+    const users = data.user;
+    const user = users.find(user => user.username === username);
+    callback(user);
+}
+
+module.exports = { getUsers, getProducts, getPurchases, checkForUser };
