@@ -4,13 +4,17 @@
  Description: 
   This file is the entry point for the application. It sets up the express server and defines the routes.
  Date Created: 2024-09-26
- Last Modified: 2024-10-01
+ Last Modified: 2024-10-12
 */
+
+// !!! development variable to switch between database and JSON file
+const IS_DEV = false;
 
 // imports
 const express = require('express');
 const path = require('path');
-const { getUsers, getProducts, getPurchases } = require('./db/db');
+const authController = require('./controllers/auth.js');
+const { getUsers, getProducts, getPurchases } = IS_DEV ? require('./db/dev_db') : require('./db/db');
 
 /* Express app configuration */
 const app = express(); // create express app instance
@@ -32,14 +36,7 @@ app.get('/signup', (req, res) => {
 });
 
 // signup POST route -- handles form submission
-app.post('/signup', (req, res) => {
-  const { username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress } = req.body;
-  //! user data needs to be checked against database for matching data..
-  //! user data needs to be validated before being inserted into the database.
-  //! user passwords need to be encrypted before being sent across network. !! No password data should be exposed in plain text.
-  console.log(username, password);
-  res.redirect('/');
-});
+app.post('/signup', authController.register);
 
 // data routes
 // users route -- serves users table from the database as JSON

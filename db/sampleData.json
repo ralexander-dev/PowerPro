@@ -1,0 +1,23 @@
+{
+  "user": [
+    {"UserID":1,"Username":"jdoe","Password":"password123","FirstName":"John","LastName":"Doe","Street":"123 Elm St","City":"Springfield","State":"IL","Zip":"62704"},
+    {"UserID":2,"Username":"asmith","Password":"securepass","FirstName":"Anna","LastName":"Smith","Street":"456 Maple St","City":"Chicago","State":"IL","Zip":"60605"},
+    {"UserID":3,"Username":"bwayne","Password":"batmanrocks","FirstName":"Bruce","LastName":"Wayne","Street":"1007 Mountain Dr","City":"Gotham","State":"NY","Zip":"10001"}
+  ],
+
+  "product": [
+    {"ProductID":1,"ProductName":"Compression Shirt","AvailableQuantity":50,"Price":"999.99","Popularity":5,"Category_Wide":"Male","Category_Narrow":"Tops"},
+    {"ProductID":2,"ProductName":"Running Shorts","AvailableQuantity":30,"Price":"79.99","Popularity":3,"Category_Wide":"Male","Category_Narrow":"Bottoms"},
+    {"ProductID":3,"ProductName":"Arm Sleeves","AvailableQuantity":100,"Price":"120.00","Popularity":4,"Category_Wide":"Male","Category_Narrow":"Tops"},
+    {"ProductID":4,"ProductName":"Basketball Shoes","AvailableQuantity":200,"Price":"699.99","Popularity":5,"Category_Wide":"Male","Category_Narrow":"Footwear"},
+    {"ProductID":5,"ProductName":"Wireless Headphones","AvailableQuantity":75,"Price":"199.99","Popularity":4,"Category_Wide":"Accessories","Category_Narrow":"Headphones"}
+  ],
+
+  "purchases": [
+    {"PurchaseID":1,"UserID":1,"ProductID":1,"PurchaseDate":"2023-09-15T04:00:00.000Z"},
+    {"PurchaseID":2,"UserID":2,"ProductID":3,"PurchaseDate":"2023-09-20T04:00:00.000Z"},
+    {"PurchaseID":3,"UserID":1,"ProductID":2,"PurchaseDate":"2023-10-01T04:00:00.000Z"},
+    {"PurchaseID":4,"UserID":3,"ProductID":4,"PurchaseDate":"2023-10-03T04:00:00.000Z"},
+    {"PurchaseID":5,"UserID":2,"ProductID":5,"PurchaseDate":"2023-10-07T04:00:00.000Z"}
+  ]
+}
