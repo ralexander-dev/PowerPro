@@ -6,15 +6,27 @@
 1. Fork the repository (Creating a copy of the repo under your GitHub account):
     - Click the **Fork** button.
 2. Clone the repository under your account on your local machine.
-    ```git clone <repository-url>```
+
+  ```bash
+  git clone <repository-url>
+
 3. Make code changes
 4. Commit your changes.
     - Stage changes locally:
-      ```git add .```
+
+      ```bash
+      git add .
+
     - Commit changes:
-      ```git commit -m "Descriptive message"```
+
+      ```bash
+      git commit -m "Descriptive message"
+
     - Push local changes to GitHub:
-      ```git push origin <branch-name>```
+
+      ``` bash
+      git push origin <branch-name>
+
 5. Create a Pull Request:
     - In the browser, navigate to the original repository on GitHub.
     - Click `Pull Requests`
@@ -23,9 +35,23 @@
 
 ## Keeping Your Fork Updated
 
-1. Navigate to your forked repository in the command line: `cd <repository-name>`
-2. Configure the upstream repository reference: `git remote add upstream <original-repository-url>`
-3. Fetch updates from the upstream repository: `git fetch upstream`
+1. Navigate to your forked repository in the command line:
+
+  ```bash
+  cd <repository-name>
+
+2. Configure the upstream repository reference:
+
+  ```bash
+  git remote add upstream <original-repository-url>
+
+3. Fetch updates from the upstream repository:
+
+  ```bash
+  git fetch upstream
+
 4. Merge changes from upstream repository into your fork.
-    - `git checkout <branch-name>`
-    - `git merge upstream/main`
+
+    ```bash
+    git checkout <branch-name>
+    git merge upstream/main
