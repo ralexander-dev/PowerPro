@@ -5,17 +5,20 @@
 
 1. Fork the repository (Creating a copy of the repo under your GitHub account):
     - Click the **Fork** button.
-2. Clone the repository under your account.
-    - `git clone <repository-url>`
+2. Clone the repository under your account on your local machine.
+    ```git clone <repository-url>```
 3. Make code changes
 4. Commit your changes.
-    - Stage changes locally: `git add .`
-    - Commit changes: `git commit -m "Descriptive message"`
-    - Push local changes to GitHub: `git push origin <branch-name>`
+    - Stage changes locally:
+      ```git add .```
+    - Commit changes:
+      ```git commit -m "Descriptive message"```
+    - Push local changes to GitHub:
+      ```git push origin <branch-name>```
 5. Create a Pull Request:
     - In the browser, navigate to the original repository on GitHub.
-    - Click `create a pull request`
-    - Click `compare and pull request`
+    - Click `Pull Requests`
+    - Click `New Pull Request`
     - Fill in the PR title and description explaining your work.
 
 ## Keeping Your Fork Updated
