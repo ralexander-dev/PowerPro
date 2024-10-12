@@ -1,3 +1,11 @@
+/*
+ File: bestSelling.js
+ Author(s): Russell Alexander
+ Description: 
+  This file contains funcionality for fetching and injecting best-selling items to the front-end.
+ Date Created: 2024-09-26
+ Last Modified: 2024-10-10
+*/
 
 function nameAsPath(name) {
   return name.toLowerCase().replace(/\s/g, '');

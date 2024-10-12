@@ -40,22 +40,48 @@
             <button class="menu" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
                 <a href="#">My Account</a>
-                <a href="/signup">Sign Up</a>
+                <a href="#">Sign Up</a>
                 <a href="#">Cart</a>
             </div>
         </nav>
     </header>
-    
-    <section class="search-bar">
-        <input type="text" placeholder="Search">
-    </section>
-    
-    <section class="best-selling">
-        <h2>Best Selling</h2>
-        <div id="products">
-            <script src="scripts/dataUtils/bestSelling.js"></script>
+
+    <div id="formDialogue">
+      <form action="/signup" method="post">
+        <div class="form-group">
+          <label class="labels" for="userName">Username: </label>
+          <input class="textInput" type="username" id="userName" name="username" required>
         </div>
-    </section>
+        <div class="form-group">
+          <label class="labels" for="passwordInput">Password: </label>
+          <input class="textInput" type="password" id="passwordInput" name="password" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="firstName">First Name: </label>
+          <input class="textInput" type="firstname" id="firstName" name="firstname" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="lastName">Last Name: </label>
+          <input class="textInput" type="lastname" id="lastName" name="lastname" required>
+        </div>        <div class="form-group">
+          <label class="labels" for="street">Street: </label>
+          <input class="textInput" type="streetAddress" id="street" name="streetAddress" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="city">City: </label>
+          <input class="textInput" type="cityAddress" id="city" name="cityAddress" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="state">State: </label>
+          <input class="textInput" type="stateAddress" id="state" name="stateAddress" required>
+        </div>
+        <div class="form-group">
+          <label class="labels" for="zipCode">Zip: </label>
+          <input class="textInput" type="zipAddress" id="zipCode" name="zipAddress" required>
+        </div>
+        <button type="submit" class="formButton">Save</button>
+      </form>
+    </div>
     
     <footer>
         <div class="social-icons">

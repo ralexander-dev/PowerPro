@@ -13,9 +13,10 @@ const path = require('path');
 const { getUsers, getProducts, getPurchases } = require('./db/db');
 
 /* Express app configuration */
-// create express app instance
-const app = express();
+const app = express(); // create express app instance
 app.use(express.static(path.join(__dirname, 'public'))); // set the public folder as root directory for static files
+app.use(express.urlencoded({extended: false})); // Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.json()); // Parse JSON bodies (as sent by clients)
 /* End Express app configuration */
 
 /* Route definitions */
@@ -23,6 +24,21 @@ app.use(express.static(path.join(__dirname, 'public'))); // set the public folde
 // home route -- serves the index.html file
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index2.html'));
+});
+
+// signup route -- serves the signUp.html file
+app.get('/signup', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'pages', 'signUp.html'));
+});
+
+// signup POST route -- handles form submission
+app.post('/signup', (req, res) => {
+  const { username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress } = req.body;
+  //! user data needs to be checked against database for matching data..
+  //! user data needs to be validated before being inserted into the database.
+  //! user passwords need to be encrypted before being sent across network. !! No password data should be exposed in plain text.
+  console.log(username, password);
+  res.redirect('/');
 });
 
 // data routes

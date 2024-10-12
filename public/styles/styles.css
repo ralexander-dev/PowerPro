@@ -131,6 +131,36 @@ header {
   margin: 0 auto;
 }
 
+#formDialogue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 100%; /* Increased width */
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.labels {
+  width: 100%;
+}
+
+.textInput {
+  width: 100%;
+}
+
 .product {
   width: 200px; /* Increased width */
   height: 300px; /* Increased height */
@@ -217,7 +247,7 @@ footer a:hover {
       width: 80%;
   }
 
-  .products {
+  #products {
       grid-template-columns: 1fr;
       gap: 15px;
   }

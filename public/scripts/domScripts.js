@@ -1,3 +1,12 @@
+/*
+ File: domScripts.js (original: scripts.js)
+ Author(s): Robert Matias
+ Description: 
+  This file contains funcionality for DOM manipulation.
+ Date Created: 
+ Last Modified: 
+*/
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Website Loaded");
 });

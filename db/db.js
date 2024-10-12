@@ -4,7 +4,7 @@
  Description: 
   This file is contains functions for interacting with the database.
  Date Created: 2024-09-26
- Last Modified: 2024-10-03
+ Last Modified: 2024-10-09
 */
 
 const mysql = require('mysql2');
