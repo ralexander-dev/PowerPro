@@ -1,4 +1,3 @@
-
 # PowerPro
 
 ## Contributing
@@ -7,8 +6,9 @@
     - Click the **Fork** button.
 2. Clone the repository under your account on your local machine.
 
-  ```bash
-  git clone <repository-url>
+    ```bash
+    git clone <repository-url>
+    ```
 
 3. Make code changes
 4. Commit your changes.
@@ -16,16 +16,19 @@
 
       ```bash
       git add .
+      ```
 
     - Commit changes:
 
       ```bash
       git commit -m "Descriptive message"
+      ```
 
     - Push local changes to GitHub:
 
-      ``` bash
+      ```bash
       git push origin <branch-name>
+      ```
 
 5. Create a Pull Request:
     - In the browser, navigate to the original repository on GitHub.
@@ -37,21 +40,26 @@
 
 1. Navigate to your forked repository in the command line:
 
-  ```bash
-  cd <repository-name>
+    ```bash
+    cd <repository-name>
+    ```
 
 2. Configure the upstream repository reference:
 
-  ```bash
-  git remote add upstream <original-repository-url>
+    ```bash
+    git remote add upstream <original-repository-url>
+    ```
 
 3. Fetch updates from the upstream repository:
 
-  ```bash
-  git fetch upstream
+    ```bash
+    git fetch upstream
+    ```
 
 4. Merge changes from upstream repository into your fork.
 
     ```bash
     git checkout <branch-name>
     git merge upstream/main
+    ```
+
