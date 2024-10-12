@@ -94,4 +94,23 @@ function getPurchases(callback) {
     });
 }
 
-module.exports = { getUsers, getProducts, getPurchases };
+function checkForUser(username, callback) {
+    const conn = createConnection();
+    const query = 'SELECT * FROM user WHERE username = ?';
+    
+    conn.query(query, [username], function (err, results) {
+        if (err) {
+            callback(err);
+            throw err;
+        }
+        console.log('User found.');
+        callback(results);
+
+        conn.end(function (err) {
+            if (err) throw err;
+            console.log('Closing connection.');
+        });
+    });
+}
+
+module.exports = { getUsers, getProducts, getPurchases, checkForUser };

@@ -62,4 +62,3 @@
     git checkout <branch-name>
     git merge upstream/main
     ```
-
