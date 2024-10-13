@@ -69,7 +69,8 @@ function checkForUser(username, callback) {
     const data = loadJSON();
     const users = data.user;
     const user = users.find(user => user.username === username);
-    callback(user);
+    const result = user ? [user] : [];
+    callback(result);
 }
 
 module.exports = { getUsers, getProducts, getPurchases, checkForUser };

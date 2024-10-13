@@ -168,6 +168,12 @@ header {
   font-size: 12px;
 }
 
+.password {
+  input-security: auto;
+  -webkit-text-security: disc;
+  -moz-text-security: disc;
+}
+
 .product {
   width: 200px; /* Increased width */
   height: 300px; /* Increased height */
