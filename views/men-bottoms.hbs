@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shipping and Returns - PowerPro</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Men's Bottoms - PowerPro</title>
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
     <header>
@@ -15,9 +15,9 @@
             <div class="dropdown">
                 <a href="#">Men's</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Tops</a></li>
-                    <li><a href="#">Bottoms</a></li>
-                    <li><a href="#">Shoes</a></li>
+                    <li><a href="/menTops">Tops</a></li>
+                    <li><a href="/menBottoms">Bottoms</a></li>
+                    <li><a href="/menShoes">Shoes</a></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -40,19 +40,40 @@
             <button class="menu" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
                 <a href="#">My Account</a>
-                <a href="#">Sign Up</a>
+                <a href="/signup">Sign Up</a>
                 <a href="#">Cart</a>
             </div>
         </nav>
     </header>
 
     <section class="content">
-        <h2>Shipping and Returns</h2>
-        <h3>Shipping Policy</h3>
-        <p>We offer worldwide shipping with a flat rate of $10 for orders below $100. Free shipping is available for orders above $100.</p>
-        <h3>Returns Policy</h3>
-        <p>If you are not satisfied with your purchase, you can return the product within 30 days of receiving it. The product must be in its original packaging, unused, and in the same condition you received it.</p>
-        <p>For returns, please contact our support team at <a href="mailto:support@powerpro.com">support@powerpro.com</a>.</p>
+        <h2>Men's Bottoms</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/running-shorts.jpg" alt="Running Shorts">
+                <p>Running Shorts</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/active-shorts.jpg" alt="Active Shorts">
+                <p>Active Shorts</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/sweats.jpg" alt="Sweats">
+                <p>Sweats</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/joggers.jpg" alt="Joggers">
+                <p>Joggers</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="additional-info">
+            <h3>Why Choose Our Bottoms?</h3>
+            <p>Flexible, durable, and designed for performance, our bottoms are perfect for both training and leisure.</p>
+        </div>
     </section>
 
     <footer>
@@ -62,12 +83,12 @@
             <a href="https://www.facebook.com/your_profile" id="fb">FB</a>
         </div>
         <div class="footer-links">
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="shipping.html">Shipping and Returns</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/shipping">Shipping and Returns</a>
         </div>
     </footer>
-    
-    <script src="scripts/domScripts.js"></script>
+
+    <script src="/scripts/domScripts.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Men's Shoes - PowerPro</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
     <header>
@@ -15,20 +15,35 @@
             <div class="dropdown">
                 <a href="#">Men's</a>
                 <ul class="dropdown-content">
-                    <li><a href="men-tops.html">Tops</a></li>
-                    <li><a href="men-bottoms.html">Bottoms</a></li>
-                    <li><a href="men-shoes.html">Shoes</a></li>
+                    <li><a href="/menTops">Tops</a></li>
+                    <li><a href="/menBottoms">Bottoms</a></li>
+                    <li><a href="/menShoes">Shoes</a></li>
                 </ul>
             </div>
-            <nav>
-                <button class="menu" onclick="toggleMenu()">☰</button>
-                <div class="nav-links" id="navLinks">
-                    <a href="myaccount.html">My Account</a>
-                    <a href="signup.html">Sign Up</a>
-                    <a href="cart.html">Cart</a>
-                </div>
-            </nav>
-        </div>
+            <div class="dropdown">
+                <a href="#">Women's</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Tops</a></li>
+                    <li><a href="#">Bottoms</a></li>
+                    <li><a href="#">Shoes</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Accessories</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">HeadWear</a></li>
+                    <li><a href="#">Sleeves</a></li>
+                    <li><a href="#">Gym Bags</a></li>
+                </ul>
+            </div>
+        <nav>
+            <button class="menu" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#">My Account</a>
+                <a href="/signup">Sign Up</a>
+                <a href="#">Cart</a>
+            </div>
+        </nav>
     </header>
 
     <section class="content">
@@ -58,12 +73,12 @@
             <a href="https://www.facebook.com/your_profile" id="fb">FB</a>
         </div>
         <div class="footer-links">
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="shipping.html">Shipping and Returns</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/shipping">Shipping and Returns</a>
         </div>
     </footer>
 
-    <script src="scripts/domScripts.js"></script>
+    <script src="/scripts/domScripts.js"></script>
 </body>
 </html>

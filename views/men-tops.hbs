@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - PowerPro</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Men's Tops - PowerPro</title>
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
     <header>
@@ -15,9 +15,9 @@
             <div class="dropdown">
                 <a href="#">Men's</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Tops</a></li>
-                    <li><a href="#">Bottoms</a></li>
-                    <li><a href="#">Shoes</a></li>
+                    <li><a href="/menTops">Tops</a></li>
+                    <li><a href="/menBottoms">Bottoms</a></li>
+                    <li><a href="/menShoes">Shoes</a></li>
                 </ul>
             </div>
             <div class="dropdown">
@@ -40,16 +40,35 @@
             <button class="menu" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
                 <a href="#">My Account</a>
-                <a href="#">Sign Up</a>
+                <a href="/signup">Sign Up</a>
                 <a href="#">Cart</a>
             </div>
         </nav>
     </header>
 
     <section class="content">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need to reach out to us, feel free to send an email to <a href="mailto:support@powerpro.com">support@powerpro.com</a> or call us at (123) 456-7890.</p>
-        <p>We are available from Monday to Friday, 9 AM to 6 PM.</p>
+        <h2>Men's Tops</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/short-sleeves.jpg" alt="Short Sleeves">
+                <p>Short Sleeves Shirt</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/long-sleeves.jpg" alt="Long Sleeves">
+                <p>Long Sleeves Shirt</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/sleeveless.jpg" alt="Sleeveless Shirt">
+                <p>Sleeveless Shirt</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <div class="additional-info">
+            <h3>Featured Materials:</h3>
+            <p>Our tops are made with breathable, moisture-wicking fabric for ultimate comfort during intense workouts.</p>
+        </div>
     </section>
 
     <footer>
@@ -59,12 +78,12 @@
             <a href="https://www.facebook.com/your_profile" id="fb">FB</a>
         </div>
         <div class="footer-links">
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="shipping.html">Shipping and Returns</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/shipping">Shipping and Returns</a>
         </div>
     </footer>
-    
-    <script src="scripts/domScripts.js"></script>
+
+    <script src="/scripts/domScripts.js"></script>
 </body>
 </html>
