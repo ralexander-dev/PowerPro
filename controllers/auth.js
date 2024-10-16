@@ -1,4 +1,5 @@
-const IS_DEV = true;
+require('dotenv').config();
+const IS_DEV = (process.env.IS_DEV === 'TRUE') ? true : false;
 const { checkForUser } = IS_DEV ? require('../db/dev_db') : require('../db/db');
 
 exports.register = (req, res) => {
