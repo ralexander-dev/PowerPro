@@ -7,13 +7,14 @@
  Last Modified: 2024-10-16
 */
 
-// !!! development variable to switch between database and JSON file
-const IS_DEV = true;
 
 // imports
 const express = require('express');
 const path = require('path');
 const authController = require('./controllers/auth.js');
+require('dotenv').config();
+// !!! development variable to switch between database and JSON file
+const IS_DEV = (process.env.IS_DEV === 'TRUE') ? true : false;
 const { getUsers, getProducts, getPurchases } = IS_DEV ? require('./db/dev_db') : require('./db/db');
 
 /* Express app configuration */
