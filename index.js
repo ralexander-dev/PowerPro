@@ -29,12 +29,16 @@ app.set('view engine', 'hbs'); // set the view engine to HBS
 // static GET routes
 app.get('/', (req, res) => { res.render('index'); }); // home route -- renders index.hbs
 app.get('/signup', (req, res) => { res.render('signup'); }); // signup route -- renders signup.hbs
-app.get('/about', (req, res) => { res.render('about'); }); // about route -- renders about.hbs
-app.get('/contact', (req, res) => { res.render('contact'); }); // contact route -- renders contact.hbs
+app.get('/about', (req, res) => { res.render('info/about'); }); // about route -- renders about.hbs
+app.get('/contact', (req, res) => { res.render('info/contact'); }); // contact route -- renders contact.hbs
 app.get('/shipping', (req, res) => { res.render('shipping'); }); // shipping route -- renders shipping.hbs
-app.get('/menTops', (req, res) => { res.render('men-tops'); }); // menTops route -- renders men-tops.hbs
-app.get('/menBottoms', (req, res) => { res.render('men-bottoms'); }); // menBottoms route -- renders men-bottoms.hbs
-app.get('/menShoes', (req, res) => { res.render('men-shoes'); }); // menShoes route -- renders men-shoes.hbs
+app.get('/menTops', (req, res) => { res.render('products/men-tops'); }); // menTops route -- renders men-tops.hbs
+app.get('/menBottoms', (req, res) => { res.render('products/men-bottoms'); }); // menBottoms route -- renders men-bottoms.hbs
+app.get('/menShoes', (req, res) => { res.render('products/men-shoes'); }); // menShoes route -- renders men-shoes.hbs
+app.get('/womenTops', (req, res) => { res.render('products/women-tops'); }); // womenTops route -- renders women-tops.hbs
+app.get('/womenBottoms', (req, res) => { res.render('products/women-bottoms'); }); // womenBottoms route -- renders women-bottoms.hbs
+app.get('/womenShoes', (req, res) => { res.render('products/women-shoes'); }); // womenShoes route -- renders women-shoes.hbs
+
 // signup POST route -- handles form submission
 app.post('/signup', authController.register);
 
