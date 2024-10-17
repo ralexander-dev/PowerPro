@@ -1,5 +1,5 @@
 /***********************************************************************************************************************************
- File: validation.js
+ File: register.js
  Author(s): Russell Alexander
  Description: 
   This file contains utilities for validating inputs for user registration.

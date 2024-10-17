@@ -28,6 +28,7 @@ app.set('view engine', 'hbs'); // set the view engine to HBS
 // static GET routes
 app.get('/', (req, res) => { res.render('index'); }); // home route -- renders index.hbs
 app.get('/signup', (req, res) => { res.render('signup'); }); // signup route -- renders signup.hbs
+app.get('/login', (req, res) => { res.render('login'); }); // login route -- renders login.hbs
 app.get('/about', (req, res) => { res.render('info/about'); }); // about route -- renders about.hbs
 app.get('/contact', (req, res) => { res.render('info/contact'); }); // contact route -- renders contact.hbs
 app.get('/shipping', (req, res) => { res.render('shipping'); }); // shipping route -- renders shipping.hbs
@@ -40,6 +41,7 @@ app.get('/womenShoes', (req, res) => { res.render('products/women-shoes'); }); /
 
 // signup POST route -- handles form submission
 app.post('/signup', authController.register);
+app.post('/login', authController.login);
 
 
 // data routes

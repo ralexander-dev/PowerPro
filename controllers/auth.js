@@ -7,11 +7,9 @@
  Last Modified: 2024-10-17
 ***********************************************************************************************************************************/
 
-/* Imports */
-const { validateUsername, validatePassword } = require('./validation');
-
 /* Functionality for registering new users */
 exports.register = (req, res) => {
+  const { validateUsername, validatePassword } = require('./register');
   const { username, password, passwordConfirm, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress } = req.body;
   let usernameError = validateUsername(username);
   let passwordError = validatePassword(password, passwordConfirm);
@@ -21,5 +19,17 @@ exports.register = (req, res) => {
   } else {
     //todo -- add new user to database
     res.render('index');
+  }
+}
+
+exports.login = (req, res) => {
+  const { validateUsername } = require('./login');
+  const { username, password } = req.body;
+  const isValidLogin = validateUsername(username, password);
+
+  if(isValidLogin) {
+    res.render('index');
+  } else {
+    res.render('login', { loginError: 'Invalid username or password.' });
   }
 }
