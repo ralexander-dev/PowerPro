@@ -92,6 +92,9 @@
           <label class="labels" for="zipCode">Zip: </label>
           <input class="textInput" type="zipAddress" id="zipCode" name="zipAddress" required>
         </div>
+        {{#if errorMessage}}
+          <p class="validationError">{{errorMessage}}</p>
+        {{/if}}
         <button type="submit" class="formButton">Save</button>
       </form>
     </div>

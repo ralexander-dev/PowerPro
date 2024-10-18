@@ -51,17 +51,14 @@
         <div class="form-group">
           <label class="labels" for="userName">Username: </label>
           <input class="textInput" type="username" id="userName" name="username" required>
-          {{#if usernameError}}
-            <p class="validationError">{{usernameError}}</p>
-          {{/if}}
         </div>
         <div class="form-group">
           <label class="labels" for="passwordInput">Password: </label>
           <input class="textInput password" type="password" id="passwordInput" name="password" required>
-          {{#if passwordError}}
-            <p class="validationError">{{passwordError}}</p>
-          {{/if}}
         </div>
+        {{#if errorMessage}}
+          <p class="validationError">{{errorMessage}}</p>
+        {{/if}}
         <button type="submit" class="formButton">Save</button>
       </form>
     </div>

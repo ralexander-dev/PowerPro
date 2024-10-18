@@ -94,42 +94,4 @@ function getPurchases(callback) {
     });
 }
 
-function checkForUser(username, callback) {
-    const conn = createConnection();
-    const query = 'SELECT * FROM user WHERE username = ?';
-    
-    conn.query(query, [username], function (err, results) {
-        if (err) {
-            callback(err);
-            throw err;
-        }
-        console.log('User found.');
-        callback(results);
-
-        conn.end(function (err) {
-            if (err) throw err;
-            console.log('Closing connection.');
-        });
-    });
-}
-
-function checkPassword(username, password, callback) {
-    const conn = createConnection();
-    const query = 'SELECT * FROM user WHERE username = ? AND password = ?';
-    
-    conn.query(query, [username, password], function (err, results) {
-        if (err) {
-            callback(err);
-            throw err;
-        }
-        console.log('Password found.');
-        callback(results);
-
-        conn.end(function (err) {
-            if (err) throw err;
-            console.log('Closing connection.');
-        });
-    });
-}
-
-module.exports = { getUsers, getProducts, getPurchases, checkForUser, checkPassword };
+module.exports = { createConnection, getUsers, getProducts, getPurchases };
