@@ -38,6 +38,10 @@ app.get('/menShoes', (req, res) => { res.render('products/men-shoes'); }); // me
 app.get('/womenTops', (req, res) => { res.render('products/women-tops'); }); // womenTops route -- renders women-tops.hbs
 app.get('/womenBottoms', (req, res) => { res.render('products/women-bottoms'); }); // womenBottoms route -- renders women-bottoms.hbs
 app.get('/womenShoes', (req, res) => { res.render('products/women-shoes'); }); // womenShoes route -- renders women-shoes.hbs
+app.get('/gymBags', (req, res) => { res.render('products/gym-bags'); }); // gymBags route -- renders gym-bags.hbs
+app.get('/headwear', (req, res) => { res.render('products/headwear'); }); // headwear route -- renders headwear.hbs
+app.get('/protectiveGear', (req, res) => { res.render('products/protectiveGear'); }); // protectiveGear route -- renders protectiveGear.hbs
+app.get('/cart', (req, res) => { res.render('cart'); }); // cart route -- renders cart.hbs
 
 // signup POST route -- handles form submission
 app.post('/signup', authController.register);
