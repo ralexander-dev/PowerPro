@@ -4,7 +4,7 @@
  Description: 
   This file contains utilities for validating inputs for user login.
  Date Created: 2024-10-17
- Last Modified: 2024-10-17
+ Last Modified: 2024-10-18
 ***********************************************************************************************************************************/
 
 /* Imports */
@@ -21,7 +21,7 @@ function passwordMatch(username, password) {
         reject(err);
       }
       if(results.length > 0) {
-        if(results[0].Password === password) {
+        if(results[0].password === password) {
           console.log('Password matches.');
           resolve(true);
         } else {

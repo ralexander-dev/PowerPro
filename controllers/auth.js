@@ -4,7 +4,7 @@
  Description: 
   This file handles authentication for login and registering users.
  Date Created: 2024-10-xx
- Last Modified: 2024-10-17
+ Last Modified: 2024-10-18
 ***********************************************************************************************************************************/
 
 /* Imports */

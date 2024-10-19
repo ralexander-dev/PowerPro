@@ -4,7 +4,7 @@
  Description: 
   This file contains utilities for validating inputs for user registration.
  Date Created: 2024-10-17
- Last Modified: 2024-10-17
+ Last Modified: 2024-10-18
 ***********************************************************************************************************************************/
 
 /* Imports */
@@ -42,7 +42,7 @@ function validatePassword(password, passwordConfirm) {
 function registerUser(username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress) {
   return new Promise((resolve, reject) => {
     const conn = createConnection();
-    const query = 'INSERT INTO user (Username, Password, FirstName, LastName, Street, City, State, Zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    const query = 'INSERT INTO user (username, password, first_name, last_name, street, city, state, zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
     conn.query(query, [username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress], function(err, results) {
       if(err) {
         console.log(err);
