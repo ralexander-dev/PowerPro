@@ -85,15 +85,21 @@ exports.login = async (req, res) => {
   }
 }
 
+/* Middleware for authenticating user by checking JWT */
 exports.authMiddleware = (req, res, next) => {
+  // extract token from cookies
   const token = req.cookies.token;
+  // if token does not exist, render login page with alert
   if (!token) {
     return res.render('login', { errorMessage: 'Please log in to continue' });
   }
+  // otherwise, verify token and extract
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    // if token is invalid, render login page with alert
     if (err) {
       return res.render('login', { errorMessage: 'Please log in to continue' });
     }
+    // otherwise, set username in request
     req.username = decoded.username;
     next();
   });
