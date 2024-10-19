@@ -48,42 +48,9 @@
 
     <section class="content">
         <h2>Headwear</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="images/BaseballCap.jpg" alt="Baseball Cap">
-                <p>Baseball Cap</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/Truckerhat.jpg" alt="Trucker Hat">
-                <p>Trucker Hat</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/SkullCap.jpg" alt="Skull Cap">
-                <p>Skull Cap</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/Beanie.jpg" alt="Beanies">
-                <p>Beanie</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/HeadBands.jpg" alt="Headbands">
-                <p>Headbands</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/Headties.jpg" alt="Head Ties">
-                <p>Head Ties</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/wirelessheadphones.jpg" alt="HeadPhones">
-                <p>HeadPhones</p>
-                <button>Add to Cart</button>
-            </div>
+        <div class="product-grid" id="products">
+            <script src="/scripts/dataUtils/products.js"></script>
+            <script> displayFilteredProducts("Accessories", "Headgear") </script>
         </div>
         <div class="additional-info">
             <h3>Why Choose Our Headwear?</h3>

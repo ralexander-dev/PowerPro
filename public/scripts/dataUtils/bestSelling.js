@@ -18,7 +18,7 @@ fetch('/products')
     const products = filteredData.map(product =>
       `
         <div class="product">
-          <img src="./images/${nameAsPath(product.product_name)}.jpg"alt="${product.product_name}">
+          <img src="./images/${product.category_wide.toLowerCase()}/${nameAsPath(product.product_name)}.jpg"alt="${product.product_name}">
           <p>${product.product_name}</p>
         </div>
       `

@@ -31,9 +31,9 @@
             <div class="dropdown">
                 <a href="#">Accessories</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">HeadWear</a></li>
-                    <li><a href="#">Sleeves</a></li>
-                    <li><a href="#">Gym Bags</a></li>
+                    <li><a href="/headwear">HeadWear</a></li>
+                    <li><a href="/protectiveGear">Protective Gear</a></li>
+                    <li><a href="/gymBags">Gym Bags</a></li>
                 </ul>
             </div>
         <nav>
@@ -48,17 +48,9 @@
 
     <section class="content">
         <h2>Men's Shoes</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="images/weightlifting-shoes.jpg" alt="Weightlifting Shoes">
-                <p>Weightlifting Shoes</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/running-shoes.jpg" alt="Running Shoes">
-                <p>Running Shoes</p>
-                <button>Add to Cart</button>
-            </div>
+        <div class="product-grid" id="products">
+            <script src="/scripts/dataUtils/products.js"></script>
+            <script> displayFilteredProducts("Male", "Footwear") </script>
         </div>
         <div class="additional-info">
             <h3>Perfect Fit for Every Workout</h3>

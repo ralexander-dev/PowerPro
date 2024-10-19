@@ -3,8 +3,8 @@
  Author(s): Russell Alexander
  Description: 
   This file handles authentication for login and registering users.
- Date Created: 2024-10-xx
- Last Modified: 2024-10-18
+ Date Created: 2024-10-15
+ Last Modified: 2024-10-19
 ***********************************************************************************************************************************/
 
 /* Imports */

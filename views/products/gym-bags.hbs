@@ -48,37 +48,9 @@
 
     <section class="content">
         <h2>Gym Bags</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="images/backpacks.jpg" alt="Backpacks">
-                <p>Backpacks</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/largeDuffleBag.jpg" alt="Large Duffle Bag">
-                <p>Large Duffle Bag</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/regularDuffleBag.jpg" alt="Regular Duffle Bag">
-                <p>Regular Duffle Bag</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/smallDuffleBag.jpg" alt="Small Duffle Bag">
-                <p>Small Duffle Bag</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/waistPack.jpg" alt="Waist Pack">
-                <p>Waist Pack</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/crossBody.jpg" alt="Crossbody Bag">
-                <p>Crossbody Bag</p>
-                <button>Add to Cart</button>
-            </div>
+        <div class="product-grid" id="products">
+            <script src="/scripts/dataUtils/products.js"></script>
+            <script> displayFilteredProducts("Accessories", "Bags") </script>
         </div>
         <div class="additional-info">
             <h3>Why Choose Our Gym Bags?</h3>
