@@ -8,9 +8,7 @@
 ***********************************************************************************************************************************/
 
 /* Imports */
-require('dotenv').config(); // load environment variables
-const IS_DEV = (process.env.IS_DEV === 'TRUE') ? true : false; // !!! development variable to switch between database and JSON file
-const { createConnection } = IS_DEV ? require('../db/dev_db') : require('../db/db'); 
+const { createConnection } = require('../db/db'); 
 
 /* Function for validating usernames on signup */
 function validateUsername(username) {
@@ -41,4 +39,19 @@ function validatePassword(password, passwordConfirm) {
   }
 };
 
-module.exports = { validateUsername, validatePassword };
+function registerUser(username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress) {
+  return new Promise((resolve, reject) => {
+    const conn = createConnection();
+    const query = 'INSERT INTO user (Username, Password, FirstName, LastName, Street, City, State, Zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    conn.query(query, [username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress], function(err, results) {
+      if(err) {
+        console.log(err);
+        reject(err);
+      }
+      console.log('User registered.');
+      resolve(true);
+    });
+  });
+}
+
+module.exports = { validateUsername, validatePassword, registerUser };

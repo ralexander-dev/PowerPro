@@ -10,10 +10,12 @@
 /* Imports */
 require('dotenv').config(); // load environment variables
 const IS_DEV = (process.env.IS_DEV === 'TRUE') ? true : false; // !!! development variable to switch between database and JSON file
+const jwt = require('jsonwebtoken'); // import jsonwebtoken for user authentication
+const bcrypt = require('bcryptjs'); // import bcrypt for password hashing
 
 /* Functionality for registering new users */
 exports.register = async (req, res) => {
-  const { validateUsername, validatePassword } = require('./register'); // import input validations from register.js
+  const { validateUsername, validatePassword, registerUser } = require('./register'); // import input validations from register.js
   const { username, password, passwordConfirm, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress } = req.body; // extract user input from form
   
   // if in development mode, skip registration and render index page
@@ -30,6 +32,10 @@ exports.register = async (req, res) => {
   
       // if username is unique and passwords match, render index page
       if (isValidUsername && isPasswordMatch) {
+        // ! Note: DB needs to be updated to store hashed passwords, they are too long at the moment
+        //let hashedPassword = await bcrypt.hash(password, 8); // hash password
+        let hashedPassword = password; // temporary workaround
+        await registerUser(username, hashedPassword, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress); // register user
         res.render('index');
       }
       // otherwise, render signup page with necessary alerts 
@@ -47,7 +53,7 @@ exports.register = async (req, res) => {
 
 /* Functionality for logging in users */
 exports.login = async (req, res) => {
-  const { validateUsername, passwordMatch } = require('./login'); // import input validations from login.js
+  const { passwordMatch } = require('./login'); // import input validations from login.js
   const { username, password } = req.body; // extract user input from form
 
   // if in development mode, skip login and render index page
@@ -58,11 +64,10 @@ exports.login = async (req, res) => {
   // otherwise, validate user input and render index page if successful 
   else {
     try {
-      const isValidUsername = await validateUsername(username); // check if username exists
       const isPasswordMatch = await passwordMatch(username, password); // check if password matches username
   
       // if username exists and password matches, render index page
-      if (isValidUsername && isPasswordMatch) {
+      if (isPasswordMatch) {
         res.render('index');
       }
       // otherwise, render login page with necessary alerts 

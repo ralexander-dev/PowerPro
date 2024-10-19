@@ -8,31 +8,9 @@
 ***********************************************************************************************************************************/
 
 /* Imports */
-require('dotenv').config(); // load environment variables
-const IS_DEV = (process.env.IS_DEV === 'TRUE') ? true : false; // !!! development variable to switch between database and JSON file
-const { createConnection } = IS_DEV ? require('../db/dev_db') : require('../db/db'); 
+const { createConnection } = require('../db/db'); 
 
-/* Function for validating usernames on login input */
-function validateUsername(username) {
-  return new Promise((resolve, reject) => { 
-    const conn = createConnection();
-    const query = 'SELECT * FROM user WHERE username = ?';
-    conn.query(query, [username], function(err, results) {
-      if(err) {
-        console.log(err);
-        reject(err);
-      }
-      if(results.length > 0) {
-        console.log('Username exists.');
-        resolve(true);
-      } else {
-        console.log('Username does not exist.');
-        resolve(false);
-      }
-    });
-  });
-}
-
+/* Function for validating username/password combination on login */
 function passwordMatch(username, password) {
   return new Promise((resolve, reject) => {
     const conn = createConnection();
@@ -43,7 +21,6 @@ function passwordMatch(username, password) {
         reject(err);
       }
       if(results.length > 0) {
-        console.log("Results: ", results)
         if(results[0].Password === password) {
           console.log('Password matches.');
           resolve(true);
@@ -59,4 +36,4 @@ function passwordMatch(username, password) {
   });
 }
 
-module.exports = { validateUsername, passwordMatch };
+module.exports = { passwordMatch };
