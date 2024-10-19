@@ -32,9 +32,7 @@ exports.register = async (req, res) => {
   
       // if username is unique and passwords match, render index page
       if (isValidUsername && isPasswordMatch) {
-        // ! Note: DB needs to be updated to store hashed passwords, they are too long at the moment
-        //let hashedPassword = await bcrypt.hash(password, 8); // hash password
-        let hashedPassword = password; // temporary workaround
+        let hashedPassword = await bcrypt.hash(password, 8); // hash password
         await registerUser(username, hashedPassword, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress); // register user
         res.render('index');
       }
@@ -68,6 +66,12 @@ exports.login = async (req, res) => {
   
       // if username exists and password matches, render index page
       if (isPasswordMatch) {
+        const token = jwt.sign({ username: username }, process.env.JWT_SECRET, { expiresIn: '1h' }); // create token with username
+        res.cookie('token', jwt, {
+          httpOnly: true,
+          secure: (!IS_DEV),
+          maxAge: 3600000, // 1 hour
+        });
         res.render('index');
       }
       // otherwise, render login page with necessary alerts 
@@ -79,4 +83,18 @@ exports.login = async (req, res) => {
       res.render('login', { errorMessage: 'An error occurred. Please try again.' });
     }
   }
+}
+
+exports.authMiddleware = (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.status(401).json({ message: 'Unauthorized: No token provided.' });
+  }
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ message: 'Unauthorized: Invalid token.' });
+    }
+    req.username = decoded.username;
+    next();
+  });
 }

@@ -15,7 +15,7 @@ CREATE TABLE `user` (
   `city` varchar(50) NOT NULL,
   `state` varchar(50) NOT NULL,
   `zip` varchar(5) NOT NULL,
-  PRIMARY KEY (`userID`)
+  PRIMARY KEY (`user_ID`)
 );
 
 -- 'product' table

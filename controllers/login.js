@@ -9,6 +9,7 @@
 
 /* Imports */
 const { createConnection } = require('../db/db'); 
+const bcrypt = require('bcryptjs'); // import bcrypt for password hashing
 
 /* Function for validating username/password combination on login */
 function passwordMatch(username, password) {
@@ -21,7 +22,10 @@ function passwordMatch(username, password) {
         reject(err);
       }
       if(results.length > 0) {
-        if(results[0].password === password) {
+        let hashedPassword = results[0].password;
+        // ! Note: synchronous bcrypt comparison is not recommended as it blocks main event loop
+        let passwordMatch = bcrypt.compareSync(password, hashedPassword);
+        if(passwordMatch) {
           console.log('Password matches.');
           resolve(true);
         } else {

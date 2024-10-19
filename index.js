@@ -15,12 +15,16 @@ require('dotenv').config();
 // !!! development variable to switch between database and JSON file
 const IS_DEV = (process.env.IS_DEV === 'TRUE') ? true : false;
 const { getUsers, getProducts, getPurchases } = IS_DEV ? require('./db/dev_db') : require('./db/db');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
 /* Express app configuration */
 const app = express(); // create express app instance
 app.use(express.static(path.join(__dirname, 'public'))); // set the public folder as root directory for static files
 app.use(express.urlencoded({extended: false})); // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.json()); // Parse JSON bodies (as sent by clients)
+app.use(cookieParser()); // use cookie parser middleware
+app.use(bodyParser.json()); // use body parser middleware
 app.set('view engine', 'hbs'); // set the view engine to HBS
 /* End Express app configuration */
 
