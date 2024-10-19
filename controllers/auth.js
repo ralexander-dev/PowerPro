@@ -67,7 +67,7 @@ exports.login = async (req, res) => {
       // if username exists and password matches, render index page
       if (isPasswordMatch) {
         const token = jwt.sign({ username: username }, process.env.JWT_SECRET, { expiresIn: '1h' }); // create token with username
-        res.cookie('token', jwt, {
+        res.cookie('token', token, {
           httpOnly: true,
           secure: (!IS_DEV),
           maxAge: 3600000, // 1 hour
@@ -88,11 +88,11 @@ exports.login = async (req, res) => {
 exports.authMiddleware = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
-    return res.status(401).json({ message: 'Unauthorized: No token provided.' });
+    return res.render('login', { errorMessage: 'Please log in to continue' });
   }
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
-      return res.status(401).json({ message: 'Unauthorized: Invalid token.' });
+      return res.render('login', { errorMessage: 'Please log in to continue' });
     }
     req.username = decoded.username;
     next();

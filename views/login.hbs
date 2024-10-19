@@ -56,11 +56,13 @@
           <label class="labels" for="passwordInput">Password: </label>
           <input class="textInput password" type="password" id="passwordInput" name="password" required>
         </div>
-        {{#if errorMessage}}
-          <p class="validationError">{{errorMessage}}</p>
-        {{/if}}
         <button type="submit" class="formButton">Save</button>
       </form>
+      <script>
+        {{#if errorMessage}}
+            alert("{{errorMessage}}");
+        {{/if}}
+      </script> 
     </div>
     
     <footer>
@@ -77,5 +79,6 @@
     </footer>
     
     <script src="/scripts/domScripts.js"></script>
+    <script> history.pushState({}, '', "/login") </script>
 </body>
 </html>
