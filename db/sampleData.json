@@ -35,11 +35,11 @@
     { "product_id": 27, "product_name": "Beanie", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" }
   ],
 
-  "purchases": [
-    { "purchase_ID":1, "user_ID":1, "product_ID":1, "purchase_date":"2023-09-15T04:00:00.000Z" },
-    { "purchase_ID":2, "user_ID":2, "product_ID":3, "purchase_date":"2023-09-20T04:00:00.000Z" },
-    { "purchase_ID":3, "user_ID":1, "product_ID":2, "purchase_date":"2023-10-01T04:00:00.000Z" },
-    { "purchase_ID":4, "user_ID":3, "product_ID":4, "purchase_date":"2023-10-03T04:00:00.000Z" },
-    { "purchase_ID":5, "user_ID":2, "product_ID":5, "purchase_date":"2023-10-07T04:00:00.000Z" }
+  "purchase": [
+    { "purchase_id":1, "user_id":1, "product_id":1, "purchase_date":"2023-09-15T04:00:00.000Z", "purchase_complete": false},
+    { "purchase_id":2, "user_id":2, "product_id":3, "purchase_date":"2023-09-20T04:00:00.000Z", "purchase_complete": false },
+    { "purchase_id":3, "user_id":1, "product_id":2, "purchase_date":"2023-10-01T04:00:00.000Z", "purchase_complete": false },
+    { "purchase_id":4, "user_id":3, "product_id":4, "purchase_date":"2023-10-03T04:00:00.000Z", "purchase_complete": false },
+    { "purchase_id":5, "user_id":2, "product_id":5, "purchase_date":"2023-10-07T04:00:00.000Z", "purchase_complete": false }
   ]
 }

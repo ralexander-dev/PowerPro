@@ -45,7 +45,8 @@ app.get('/womenShoes', (req, res) => { res.render('products/women-shoes'); }); /
 app.get('/gymBags', (req, res) => { res.render('products/gym-bags'); }); // gymBags route -- renders gym-bags.hbs
 app.get('/headwear', (req, res) => { res.render('products/headwear'); }); // headwear route -- renders headwear.hbs
 app.get('/protectiveGear', (req, res) => { res.render('products/protectiveGear'); }); // protectiveGear route -- renders protectiveGear.hbs
-app.get('/cart', authController.authMiddleware, (req, res) => { res.render('cart'); }); // cart route -- renders cart.hbs
+// ! Cart needs authentication to access user's cart data. THIS IS NOT YET IMPLEMENTED.
+app.get('/cart', (req, res) => { res.render('cart'); }); // cart route -- renders cart.hbs
 
 // signup POST route -- handles form submission
 app.post('/signup', authController.register);
