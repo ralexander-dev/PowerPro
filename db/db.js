@@ -94,4 +94,19 @@ function getPurchases(callback) {
     });
 }
 
+// ! NOT YET IMPLEMENTED, 
+function getCart(user_ID, callback) {
+    const conn = createConnection();
+    const query = `SELECT * FROM purchase WHERE user_id = ? && purchase_complete = ?`;
+    conn.query(query, [username, false], function(err, results) {
+        if(err) {
+            console.log(err);
+            callback(err);
+        }
+        console.log('Cart data retrieval complete.');
+        callback(results);
+    });
+}
+
+
 module.exports = { createConnection, getUsers, getProducts, getPurchases };

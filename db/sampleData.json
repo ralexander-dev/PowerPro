@@ -32,7 +32,16 @@
     { "product_id": 24, "product_name": "Knee Brace", "available_quantity": 75, "price": 19.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Support" },
     { "product_id": 25, "product_name": "Running Shoes", "available_quantity": 100, "price": 129.99, "popularity": 3, "category_wide": "Male", "category_narrow": "Footwear" },
     { "product_id": 26, "product_name": "Trucker Hat", "available_quantity": 50, "price": 24.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" },
-    { "product_id": 27, "product_name": "Beanie", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" }
+    { "product_id": 27, "product_name": "Beanie", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" },
+    { "product_id": 28, "product_name": "Leggings", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Bottoms" },
+    { "product_id": 29, "product_name": "Long Sleeve Shirt", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Tops" },
+    { "product_id": 30, "product_name": "Running Shoes", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Footwear" },
+    { "product_id": 31, "product_name": "Running Shoes 2", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Footwear" },
+    { "product_id": 32, "product_name": "Running Shoes 3", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Footwear" },
+    { "product_id": 33, "product_name": "Short Sleeve Shirt", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Tops" },
+    { "product_id": 34, "product_name": "Running Shorts", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Bottoms" },
+    { "product_id": 35, "product_name": "Sweatpants", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Bottoms" },
+    { "product_id": 36, "product_name": "Tanktop", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Tops" }
   ],
 
   "purchase": [
