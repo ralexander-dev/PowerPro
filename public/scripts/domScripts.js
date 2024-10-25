@@ -7,6 +7,18 @@
  Last Modified: 
 */
 
+const lightButton = document.getElementById('lightButton');
+const darkButton = document.getElementById('darkButton');
+const body = document.body;
+
+lightButton.addEventListener('click', () => { 
+  body.classList.replace('darkTheme', 'lightTheme');
+});
+
+darkButton.addEventListener('click', () => {
+  body.classList.replace('lightTheme', 'darkTheme');
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Website Loaded");
 });
