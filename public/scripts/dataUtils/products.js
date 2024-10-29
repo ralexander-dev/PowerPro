@@ -26,7 +26,7 @@ function displayFilteredProducts(categoryWide, categoryNarrow='') {
             <img src="./images/${categoryWide.toLowerCase()}/${nameAsPath(product.product_name)}.${fileExtension}"alt="${product.product_name}">
             <p>${product.product_name}</p>
             <p>$${product.price}</p>
-            <button>Add to Cart</button>
+            <button class="cartButton">Add to Cart</button>
           </div>
         `
       );
