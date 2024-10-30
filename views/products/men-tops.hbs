@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Men's Tops - PowerPro</title>
-    <link rel="stylesheet" href="/styles/styles_alt.css">
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
-<body class="lightTheme">
+<body>
+    <script src="/scripts/domScripts.js" defer></script>
     <header>
         <div class="logo">
             <h1>PowerPro</h1>
@@ -35,6 +36,13 @@
                     <li><a href="/protectiveGear">Protective Gear</a></li>
                     <li><a href="/gymBags">Gym Bags</a></li>
                 </ul>
+            </div>
+            <div class="dropdown">
+              <a href="#">Theme</a>
+              <ul class="dropdown-content">
+                  <li><a id="lightButton" href="#">Light</a></li>
+                  <li><a id="darkButton" href="#">Dark</a></li>
+              </ul>
             </div>
         <nav>
             <button class="menu" onclick="toggleMenu()">☰</button>
@@ -71,6 +79,5 @@
         </div>
     </footer>
 
-    <script src="/scripts/domScripts.js"></script>
 </body>
 </html>

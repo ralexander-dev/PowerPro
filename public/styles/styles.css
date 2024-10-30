@@ -1,31 +1,36 @@
-/* Universal styles */
 :root {
-  --primary-bg-color: #f4f4f9;
-  --secondary-bg-color: #333;
-  --primary-text-color: #333;
-  --secondary-text-color: #fff;
-  --primary-border-color: #ddd;
-  --secondary-border-color: #555;
-  --primary-link-color-offset: #ff6666;
-  --secondary-link-color-offset: #444;
-}
-
-.lightTheme {
-  --bg: var(--primary-bg-color);
-  --text: var(--primary-text-color);
-  --bg-alt: var(--secondary-bg-color);
-  --text-alt: var(--secondary-text-color);
-  --border: var(--primary-border-color);
-  --border-alt: var(--secondary-border-color); 
-}
-
-.darkTheme {
   --bg: #2E282A;
   --text-alt: #FAD8D6;
   --bg-alt: #415555;
   --text: #817373;
   --border: #332d2d;
-  --border-alt: #817373;
+  --border-alt: #5a5151;
+  --hover-bg: #363333;
+  --hover-bg-alt: #5a5151;
+  --input-border: #5a5151;
+  --input-border-alt: #332d2d;
+}
+
+.lightTheme {
+  --bg: var(--text);
+  --text: var(--bg);
+  --bg-alt: var(--text-alt);
+  --text-alt: var(--bg-alt);
+  --border: var(--border-alt);
+  --border-alt: var(--border);
+  --hover-bg: var(--hover-bg-alt);
+  --input-border: var(--input-border);
+}
+
+.lightTheme {
+  --bg: var(--bg);
+  --text: var(--text);
+  --bg-alt: var(--bg-alt);
+  --text-alt: var(--text-alt);
+  --border: var(--border);
+  --border-alt: var(--border-alt);
+  --hover-bg: var(--hover-bg);
+  --input-border: var(--input-border-alt);
 }
 
 * {
@@ -39,7 +44,6 @@ body {
   line-height: 1.6;
   background-color: var(--bg);
   color: var(--text);
-  transition: background 0.3s ease-in-out, color 0.5s ease-in-out;
 }
 
 header {
@@ -51,10 +55,31 @@ header {
   color: var(--text-alt);
 }
 
-.logo h1 {
+h1 {
   font-size: 26px;
   font-weight: bold;
   letter-spacing: 2px;
+}
+
+h2 {
+  color: var(--text-alt);
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+h3 {
+  color: var(--text-alt);
+}
+
+p {
+  color: var(--text-alt);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-alt);
 }
 
 /* Main Navigation */
@@ -137,10 +162,20 @@ header {
 
 .search-bar input {
   width: 60%;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 25px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--input-border);
   font-size: 16px;
+  background-color: var(--bg);
+  color: var(--text-alt);
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.003);
+  background-color: var(--hover-bg);
 }
 
 .best-selling {
@@ -159,7 +194,18 @@ header {
   gap: 20px;
   justify-items: center;
   max-width: 800px;
+  min-height: 73vh;
   margin: 0 auto;
+}
+
+.cartButton {
+  width: 100%;
+  height: 50px;
+  border-radius: 14px;
+  background-color: var(--bg);
+  color: var(--text-alt);
+  box-shadow: none;
+  border: 1px solid var(--border-alt);
 }
 
 #cart {
@@ -168,7 +214,7 @@ header {
   gap: 2rem;
   justify-items: center;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  min-height: 80vh;
 }
 
 .cart-items {
@@ -179,10 +225,14 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--text-alt);
+  background-color: var(--bg);
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
+}
+
+.cart-items:last-child {
+  height: 30px;
 }
 
 .cart-items img {
@@ -193,44 +243,76 @@ header {
 
 .cart-items button {
   width: 100%;
-  height: 50px;
-  border: none;
+  height: 100%;
+  border: var(--border-alt);
   background: none;
+  color: var(--text-alt);
 }
 
 .cart-items:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background-color: #ffeded;
+  background-color: var(--hover-bg);
 }
 
 #formDialogue {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   justify-items: center;
-  width: 100%;
+  width: 100vw;
+  min-height: 86.6vh;
   margin: 0 auto;
 }
 
+#formDialogue * {
+  font-size: 20px;
+}
+
 .form-group {
-  width: 100%; /* Increased width */
-  border-radius: 12px;
-  border: 1px solid var(--border);
   display: grid;
+  grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: auto;
-  background-color: var(--text-alt);
+  gap: 10px;
+  width: 45vw; /* Increased width */
+  border-radius: 12px;
+  background-color: var(--bg);
+  color: var(--text-alt);
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
+  margin: 3% auto;
+}
+
+.form-group:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.003);
+  background-color: var(--hover-bg);
+}
+
+.form-group:last-child {
+  padding: 0;
+  margin: 0;
+  height: 30px;
 }
 
 .labels {
-  width: 100%;
+  text-wrap: nowrap;
+  width: 30%;
+  margin: 0 10px;
 }
 
 .textInput {
-  width: 100%;
+  width: 70%;
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  background-color: var(--bg);
+  color: var(--text-alt);
+  padding: 0px 15px;
+}
+
+.textInput:focus {
+  outline: none;
+  border: 1px solid var(--primary-link-color-offset);
 }
 
 .validationError {
@@ -246,11 +328,27 @@ header {
   -moz-text-security: disc;
 }
 
+.formButton {
+  width: 100%;
+  border-radius: 12px;
+  grid-column: span 2;
+  background-color: var(--bg);
+  color: var(--text-alt);
+  box-shadow: none;
+  border: 1px solid var(--border-alt);
+}
+
+.formButton:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.003);
+  background-color: var(--hover-bg);
+}
+
 .product {
   width: 200px; /* Increased width */
   height: 300px; /* Increased height */
   border-radius: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-alt);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -271,14 +369,18 @@ header {
 
 .product p {
   font-size: 16px;
-  color: var(--text);
+  color: var(--text-alt);
   text-align: center;
 }
 
 .product:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
-  background-color: #ffeded;
+  background-color: var(--hover-bg);
+}
+
+.product:hover .cartButton {
+  background-color: var(--hover-bg);
 }
 
 footer {
