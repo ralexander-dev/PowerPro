@@ -1,7 +1,12 @@
 
 
-async function displayCart(user_ID) {
+async function displayCart(username) {
     try {
+      const userResponse = await fetch('/users');
+      const userData = await userResponse.json();
+      const user = userData.find(user => user.username === username);
+      const user_ID = user.user_id;
+
       const purchasesResponse = await fetch('/purchases');
       const purchasesData = await purchasesResponse.json();
       

@@ -52,7 +52,7 @@
             <script src="/scripts/dataUtils/cart.js"></script>
             <script>
                 (async () => {
-                    try { await displayCart(1); } 
+                    try { await displayCart("{{username}}"); } 
                     catch (error) { console.error('Error displaying cart:', error);}
                 })();
             </script>
@@ -76,5 +76,6 @@
     </footer>
 
     <script src="/scripts/domScripts.js"></script>
+    <script> history.pushState({}, '', "/cart") </script>
 </body>
 </html>

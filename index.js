@@ -35,7 +35,7 @@ app.get('/signup', (req, res) => { res.render('signup'); }); // signup route -- 
 app.get('/login', (req, res) => { res.render('login'); }); // login route -- renders login.hbs
 app.get('/about', (req, res) => { res.render('info/about'); }); // about route -- renders about.hbs
 app.get('/contact', (req, res) => { res.render('info/contact'); }); // contact route -- renders contact.hbs
-app.get('/shipping', authController.authMiddleware, (req, res) => { res.render('info/shipping'); }); // shipping route -- renders shipping.hbs
+app.get('/shipping', authController.authMiddleware, (req, res) => { res.render('info/shipping', {username: req.username}); }); // shipping route -- renders shipping.hbs
 app.get('/menTops', (req, res) => { res.render('products/men-tops'); }); // menTops route -- renders men-tops.hbs
 app.get('/menBottoms', (req, res) => { res.render('products/men-bottoms'); }); // menBottoms route -- renders men-bottoms.hbs
 app.get('/menShoes', (req, res) => { res.render('products/men-shoes'); }); // menShoes route -- renders men-shoes.hbs
@@ -46,7 +46,7 @@ app.get('/gymBags', (req, res) => { res.render('products/gym-bags'); }); // gymB
 app.get('/headwear', (req, res) => { res.render('products/headwear'); }); // headwear route -- renders headwear.hbs
 app.get('/protectiveGear', (req, res) => { res.render('products/protectiveGear'); }); // protectiveGear route -- renders protectiveGear.hbs
 // ! Cart needs authentication to access user's cart data. THIS IS NOT YET IMPLEMENTED.
-app.get('/cart', (req, res) => { res.render('cart'); }); // cart route -- renders cart.hbs
+app.get('/cart', authController.authMiddleware, (req, res) => { res.render('cart', {username: req.username}); }); // cart route -- renders cart.hbs
 
 // signup POST route -- handles form submission
 app.post('/signup', authController.register);

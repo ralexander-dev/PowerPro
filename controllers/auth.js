@@ -57,6 +57,13 @@ exports.login = async (req, res) => {
   // if in development mode, skip login and render index page
   if (IS_DEV) {
     console.log('Development mode: Skipping login.');
+    const token = jwt.sign({ username: username }, process.env.JWT_SECRET, { expiresIn: '1h' }); // create token with username
+    console.log('Token:', token);
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: (!IS_DEV),
+      maxAge: 3600000, // 1 hour
+    });
     res.render('index');
   }
   // otherwise, validate user input and render index page if successful 
@@ -97,7 +104,7 @@ exports.authMiddleware = (req, res, next) => {
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     // if token is invalid, render login page with alert
     if (err) {
-      return res.render('login', { errorMessage: 'Please log in to continue' });
+      return res.render('login', { errorMessage: 'Invalid Token' });
     }
     // otherwise, set username in request
     req.username = decoded.username;
