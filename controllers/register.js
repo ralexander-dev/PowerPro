@@ -42,8 +42,8 @@ function validatePassword(password, passwordConfirm) {
 function registerUser(username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress) {
   return new Promise((resolve, reject) => {
     const conn = createConnection();
-    const query = 'INSERT INTO user (username, password, first_name, last_name, street, city, state, zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
-    conn.query(query, [username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress], function(err, results) {
+    const query = 'INSERT INTO user (username, password, first_name, last_name, street, city, state, zip, credits) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    conn.query(query, [username, password, firstname, lastname, streetAddress, cityAddress, stateAddress, zipAddress, 1000.00], function(err, results) {
       if(err) {
         console.log(err);
         reject(err);

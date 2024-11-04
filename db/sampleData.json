@@ -1,8 +1,8 @@
 {
   "user": [
-    { "user_id": 1, "username": "jdoe", "password": "password123", "first_name": "John", "last_name": "Doe", "street": "123 Elm St", "city": "Springfield", "state": "IL", "zip": "62704" },
-    { "user_id": 2, "username": "asmith", "password": "securepass", "first_name": "Anna", "last_name": "Smith", "street": "456 Maple St", "city": "Chicago", "state": "IL", "zip": "60605" },
-    { "user_id": 3, "username": "bwayne", "password": "batmanrocks", "first_name": "Bruce", "last_name": "Wayne", "street": "1007 Mountain Dr", "city": "Gotham", "state": "NY", "zip": "10001" }
+    { "user_id": 1, "username": "jdoe", "password": "password123", "first_name": "John", "last_name": "Doe", "street": "123 Elm St", "city": "Springfield", "state": "IL", "zip": "62704", "credits": 1000.00 },
+    { "user_id": 2, "username": "asmith", "password": "securepass", "first_name": "Anna", "last_name": "Smith", "street": "456 Maple St", "city": "Chicago", "state": "IL", "zip": "60605", "credits": 1000.00 },
+    { "user_id": 3, "username": "bwayne", "password": "batmanrocks", "first_name": "Bruce", "last_name": "Wayne", "street": "1007 Mountain Dr", "city": "Gotham", "state": "NY", "zip": "10001", "credits": 1000.00 }
   ],
 
   "product": [

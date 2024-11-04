@@ -15,6 +15,7 @@ CREATE TABLE `user` (
   `city` varchar(50) NOT NULL,
   `state` varchar(50) NOT NULL,
   `zip` varchar(5) NOT NULL,
+  `credits` decimal(10, 2) NOT NULL,
   PRIMARY KEY (`user_ID`)
 );
 
@@ -36,6 +37,7 @@ CREATE TABLE `purchase` (
   `user_ID` int NOT NULL,
   `product_ID` int NOT NULL,
   `purchase_date` date NOT NULL,
+  `purchase_complete` boolean NOT NULL,
   PRIMARY KEY (`purchase_ID`),
   FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`),
   FOREIGN KEY (`product_ID`) REFERENCES `product`(`product_ID`)

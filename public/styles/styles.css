@@ -211,7 +211,7 @@ a {
 #cart {
   display: grid;
   grid-template-columns: repeat(1fr);
-  gap: 2rem;
+  gap: 1rem;
   justify-items: center;
   margin: 0 auto;
   min-height: 80vh;
@@ -229,15 +229,18 @@ a {
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
+  text-align: center;
 }
 
 .cart-items:last-child {
-  height: 30px;
+  height: fit-content;
+  justify-content: center;
 }
 
 .cart-items img {
-  width: 50px; /* Adjust to fit within the container */
-  height: 50px; /* Adjust to fit within the container */
+  margin-top: 10px;
+  width: 100px; /* Adjust to fit within the container */
+  height: 100px; /* Adjust to fit within the container */
   border-radius: 8px;
 }
 

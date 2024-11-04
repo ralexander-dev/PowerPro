@@ -1,10 +1,10 @@
 USE powerproDatabase;
 -- Insert sample data into 'User' table
-INSERT INTO `user` (username, password, first_name, last_name, street, city, state, zip) 
+INSERT INTO `user` (username, password, first_name, last_name, street, city, state, zip, credits) 
 VALUES 
-('jdoe', 'password123', 'John', 'Doe', '123 Elm St', 'Springfield', 'IL', '62704'),
-('asmith', 'securepass', 'Anna', 'Smith', '456 Maple St', 'Chicago', 'IL', '60605'),
-('bwayne', 'batmanrocks', 'Bruce', 'Wayne', '1007 Mountain Dr', 'Gotham', 'NY', '10001');
+('jdoe', 'password123', 'John', 'Doe', '123 Elm St', 'Springfield', 'IL', '62704', 1000.00),
+('asmith', 'securepass', 'Anna', 'Smith', '456 Maple St', 'Chicago', 'IL', '60605', 1000.00),
+('bwayne', 'batmanrocks', 'Bruce', 'Wayne', '1007 Mountain Dr', 'Gotham', 'NY', '10001', 1000.00);
 
 -- Insert sample data into 'Product' table
 USE powerproDatabase;
@@ -39,10 +39,10 @@ VALUES
 ('Beanie', 90, 14.99, 3, 'Accessories', 'Headgear');
 
 -- Insert sample data into 'Purchase' table
-INSERT INTO `purchase` (user_ID, product_ID, purchase_date)
+INSERT INTO `purchase` (user_ID, product_ID, purchase_date, purchase_complete)
 VALUES 
-(1, 1, '2023-09-15'),
-(2, 3, '2023-09-20'),
-(1, 2, '2023-10-01'),
-(3, 4, '2023-10-03'),
-(2, 5, '2023-10-07');
+(1, 1, '2023-09-15', false),
+(2, 3, '2023-09-20', false),
+(1, 2, '2023-10-01', false),
+(3, 4, '2023-10-03', false),
+(2, 5, '2023-10-07', false);

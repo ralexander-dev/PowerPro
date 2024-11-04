@@ -6,6 +6,7 @@ async function displayCart(username) {
       const userData = await userResponse.json();
       const user = userData.find(user => user.username === username);
       const user_ID = user.user_id;
+      const userCredits = user.credits;
 
       const purchasesResponse = await fetch('/purchases');
       const purchasesData = await purchasesResponse.json();
@@ -23,6 +24,7 @@ async function displayCart(username) {
       const productsData = await productsResponse.json();
       
       const products = productsData.filter(product => product_IDs.includes(product.product_id));
+      const productsTotal = products.reduce((total, product) => total + product.price, 0);
       
       const productsHTML = products.map(product => `
         <div class="cart-items">
@@ -31,15 +33,25 @@ async function displayCart(username) {
           <p>$${product.price}</p>
         </div>
       `).join('');
+
+      const checkoutBtn = `
+        <a id="checkoutBtn" class="cart-items">
+          <div> 
+            <p> Checkout </p>
+            <p> Credits: ${userCredits} - ${productsTotal} = ${userCredits - productsTotal} </p>
+          </div>
+        </a>
+      `
       
-      document.getElementById('cart').innerHTML = productsHTML + `<div class="cart-items"><button id="checkoutBtn"> Checkout </button></div>`;
+      const cartHTML = productsHTML + checkoutBtn;
+      document.getElementById('cart').innerHTML = cartHTML;
+
     } catch (error) {
       console.error('Error fetching data:', error);
       document.getElementById('cart').innerHTML = '<p>Error loading products. Please try again later.</p>';
     }
-  }
+}
 
-  function nameAsPath(name) {
+function nameAsPath(name) {
     return name.toLowerCase().replace(/\s/g, '');
-  }
-  
+}

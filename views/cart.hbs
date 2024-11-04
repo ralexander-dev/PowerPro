@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
+    <script src="/scripts/dataUtils/cart.js"></script>
     <header>
         <div class="logo">
             <h1>PowerPro</h1>
@@ -49,16 +50,12 @@
     <section class="content">
         <h2>Cart</h2>
         <div id="cart">
-            <script src="/scripts/dataUtils/cart.js"></script>
             <script>
                 (async () => {
                     try { await displayCart("{{username}}"); } 
                     catch (error) { console.error('Error displaying cart:', error);}
                 })();
             </script>
-            <div class="cart-items"> 
-                <button id="checkoutBtn"> Checkout </button>
-            </div>
         </div>
     </section>
     
