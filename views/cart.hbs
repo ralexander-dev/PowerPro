@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
-    <script src="/scripts/domScripts.js" defer></script>
+    <script src="/scripts/dataUtils/cart.js"></script>
     <header>
         <div class="logo">
             <h1>PowerPro</h1>
@@ -47,21 +47,15 @@
         </nav>
     </header>
     
-    <div id="utilBar">
-        <section class="search-bar">
-            <input type="text" placeholder="Search">
-        </section>
-        <div id="themeSwitcher">
-            <input type="checkbox" id="themeInput">
-            <label for="themeInput" id="themeBtn"></label>
-            
-        </div>
-    </div>
-    
-    <section class="best-selling">
-        <h2>Best Selling</h2>
-        <div id="products">
-            <script src="scripts/dataUtils/bestSelling.js"></script>
+    <section class="content">
+        <h2>Cart</h2>
+        <div id="cart">
+            <script>
+                (async () => {
+                    try { await displayCart("{{username}}"); } 
+                    catch (error) { console.error('Error displaying cart:', error);}
+                })();
+            </script>
         </div>
     </section>
     
@@ -77,7 +71,8 @@
             <a href="/shipping">Shipping and Returns</a>
         </div>
     </footer>
-    
-    <script> history.pushState({}, '', "/") </script>
+
+    <script src="/scripts/domScripts.js"></script>
+    <script> history.pushState({}, '', "/cart") </script>
 </body>
 </html>

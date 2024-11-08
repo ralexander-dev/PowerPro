@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories - PowerPro</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>PowerPro</h1>
+        </div>
+        <div class="main-nav">
+            <div class="dropdown">
+                <a href="#">Men's</a>
+                <ul class="dropdown-content">
+                    <li><a href="/menTops">Tops</a></li>
+                    <li><a href="/menBottoms">Bottoms</a></li>
+                    <li><a href="/menShoes">Shoes</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Women's</a>
+                <ul class="dropdown-content">
+                    <li><a href="/womenTops">Tops</a></li>
+                    <li><a href="/womenBottoms">Bottoms</a></li>
+                    <li><a href="/WomenShoes">Shoes</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Accessories</a>
+                <ul class="dropdown-content">
+                    <li><a href="/headwear">HeadWear</a></li>
+                    <li><a href="/protectiveGear">Protective Gear</a></li>
+                    <li><a href="/gymBags">Gym Bags</a></li>
+                </ul>
+            </div>
+        <nav>
+            <button class="menu" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#">My Account</a>
+                <a href="/signup">Sign Up</a>
+                <a href="/cart">Cart</a>
+            </div>
+        </nav>
+    </header>
+    <section class="content">
+        <h2>Protective Gear</h2>
+        <div class="product-grid">
+            <script src="/scripts/dataUtils/products.js"></script>
+            <script> displayFilteredProducts("Accessories", "Support") </script>
+        </div>
+        <div class="additional-info">
+            <h3>Why Choose Our Protective Gear?</h3>
+            <p>Our protective gear is engineered to deliver superior support, injury prevention, and enhanced performance during rigorous workouts. Whether it's compression sleeves, knee braces, or weightlifting belts, each item offers the comfort and stability you need to train with confidence.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/your_profile" id="ig">IG</a>
+            <a href="https://www.twitter.com/your_profile" id="x">X</a>
+            <a href="https://www.facebook.com/your_profile" id="fb">FB</a>
+        </div>
+        <div class="footer-links">
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/shipping">Shipping and Returns</a>
+        </div>
+    </footer>
+
+    <script src="/scripts/domScripts.js"></script>
+    <script> history.pushState({}, '', "/protectiveGear") </script>
+</body>
+</html>

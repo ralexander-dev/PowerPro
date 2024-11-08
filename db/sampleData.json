@@ -1,23 +1,54 @@
 {
   "user": [
-    {"UserID":1,"Username":"jdoe","Password":"password123","FirstName":"John","LastName":"Doe","Street":"123 Elm St","City":"Springfield","State":"IL","Zip":"62704"},
-    {"UserID":2,"Username":"asmith","Password":"securepass","FirstName":"Anna","LastName":"Smith","Street":"456 Maple St","City":"Chicago","State":"IL","Zip":"60605"},
-    {"UserID":3,"Username":"bwayne","Password":"batmanrocks","FirstName":"Bruce","LastName":"Wayne","Street":"1007 Mountain Dr","City":"Gotham","State":"NY","Zip":"10001"}
+    { "user_id": 1, "username": "jdoe", "password": "password123", "first_name": "John", "last_name": "Doe", "street": "123 Elm St", "city": "Springfield", "state": "IL", "zip": "62704", "credits": 1000.00 },
+    { "user_id": 2, "username": "asmith", "password": "securepass", "first_name": "Anna", "last_name": "Smith", "street": "456 Maple St", "city": "Chicago", "state": "IL", "zip": "60605", "credits": 1000.00 },
+    { "user_id": 3, "username": "bwayne", "password": "batmanrocks", "first_name": "Bruce", "last_name": "Wayne", "street": "1007 Mountain Dr", "city": "Gotham", "state": "NY", "zip": "10001", "credits": 1000.00 }
   ],
 
   "product": [
-    {"ProductID":1,"ProductName":"Compression Shirt","AvailableQuantity":50,"Price":"999.99","Popularity":5,"Category_Wide":"Male","Category_Narrow":"Tops"},
-    {"ProductID":2,"ProductName":"Running Shorts","AvailableQuantity":30,"Price":"79.99","Popularity":3,"Category_Wide":"Male","Category_Narrow":"Bottoms"},
-    {"ProductID":3,"ProductName":"Arm Sleeves","AvailableQuantity":100,"Price":"120.00","Popularity":4,"Category_Wide":"Male","Category_Narrow":"Tops"},
-    {"ProductID":4,"ProductName":"Basketball Shoes","AvailableQuantity":200,"Price":"699.99","Popularity":5,"Category_Wide":"Male","Category_Narrow":"Footwear"},
-    {"ProductID":5,"ProductName":"Wireless Headphones","AvailableQuantity":75,"Price":"199.99","Popularity":4,"Category_Wide":"Accessories","Category_Narrow":"Headphones"}
+    { "product_id": 1, "product_name": "Arm Sleeves", "available_quantity": 100, "price": 19.99, "popularity": 3, "category_wide": "Male", "category_narrow": "Tops" },
+    { "product_id": 2, "product_name": "Active Shorts", "available_quantity": 60, "price": 49.99, "popularity": 3, "category_wide": "Male", "category_narrow": "Bottoms" },
+    { "product_id": 3, "product_name": "Compression Socks", "available_quantity": 150, "price": 19.99, "popularity": 4, "category_wide": "Male", "category_narrow": "Footwear" },
+    { "product_id": 4, "product_name": "Large Duffle Bag", "available_quantity": 40, "price": 79.99, "popularity": 5, "category_wide": "Accessories", "category_narrow": "Bags" },
+    { "product_id": 5, "product_name": "Ankle Brace", "available_quantity": 120, "price": 14.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Support" },
+    { "product_id": 6, "product_name": "Compression Shirt", "available_quantity": 50, "price": 999.99, "popularity": 5, "category_wide": "Male", "category_narrow": "Tops" },
+    { "product_id": 7, "product_name": "Running Shorts", "available_quantity": 30, "price": 79.99, "popularity": 3, "category_wide": "Male", "category_narrow": "Bottoms" },
+    { "product_id": 8, "product_name": "Waist Pack", "available_quantity": 90, "price": 24.99, "popularity": 4, "category_wide": "Accessories", "category_narrow": "Bags" },
+    { "product_id": 9, "product_name": "Leg Sleeve", "available_quantity": 75, "price": 39.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Support" },
+    { "product_id": 10, "product_name": "Short Sleeves", "available_quantity": 110, "price": 29.99, "popularity": 4, "category_wide": "Male", "category_narrow": "Tops" },
+    { "product_id": 11, "product_name": "Weightlifting Shoes", "available_quantity": 25, "price": 159.99, "popularity": 4, "category_wide": "Male", "category_narrow": "Footwear" },
+    { "product_id": 12, "product_name": "Crossbody", "available_quantity": 50, "price": 59.99, "popularity": 4, "category_wide": "Accessories", "category_narrow": "Bags" },
+    { "product_id": 13, "product_name": "Lifting Belt", "available_quantity": 35, "price": 89.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Support" },
+    { "product_id": 14, "product_name": "Skull Cap", "available_quantity": 80, "price": 14.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" },
+    { "product_id": 15, "product_name": "Backpack", "available_quantity": 45, "price": 89.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Bags" },
+    { "product_id": 16, "product_name": "Headband", "available_quantity": 120, "price": 12.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" },
+    { "product_id": 17, "product_name": "Lifting Gloves", "available_quantity": 40, "price": 24.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Gloves" },
+    { "product_id": 18, "product_name": "Sleeveless Shirt", "available_quantity": 55, "price": 29.99, "popularity": 3, "category_wide": "Male", "category_narrow": "Tops" },
+    { "product_id": 19, "product_name": "Wrist Straps", "available_quantity": 100, "price": 15.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Support" },
+    { "product_id": 20, "product_name": "Baseball Cap", "available_quantity": 70, "price": 19.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" },
+    { "product_id": 21, "product_name": "Joggers", "available_quantity": 40, "price": 49.99, "popularity": 3, "category_wide": "Male", "category_narrow": "Bottoms" },
+    { "product_id": 22, "product_name": "Regular Duffle Bag", "available_quantity": 30, "price": 69.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Bags" },
+    { "product_id": 23, "product_name": "Sweats", "available_quantity": 65, "price": 39.99, "popularity": 3, "category_wide": "Male", "category_narrow": "Bottoms" },
+    { "product_id": 24, "product_name": "Knee Brace", "available_quantity": 75, "price": 19.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Support" },
+    { "product_id": 25, "product_name": "Running Shoes", "available_quantity": 100, "price": 129.99, "popularity": 3, "category_wide": "Male", "category_narrow": "Footwear" },
+    { "product_id": 26, "product_name": "Trucker Hat", "available_quantity": 50, "price": 24.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" },
+    { "product_id": 27, "product_name": "Beanie", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Accessories", "category_narrow": "Headgear" },
+    { "product_id": 28, "product_name": "Leggings", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Bottoms" },
+    { "product_id": 29, "product_name": "Long Sleeve Shirt", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Tops" },
+    { "product_id": 30, "product_name": "Running Shoes", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Footwear" },
+    { "product_id": 31, "product_name": "Running Shoes 2", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Footwear" },
+    { "product_id": 32, "product_name": "Running Shoes 3", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Footwear" },
+    { "product_id": 33, "product_name": "Short Sleeve Shirt", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Tops" },
+    { "product_id": 34, "product_name": "Running Shorts", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Bottoms" },
+    { "product_id": 35, "product_name": "Sweatpants", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Bottoms" },
+    { "product_id": 36, "product_name": "Tanktop", "available_quantity": 90, "price": 14.99, "popularity": 3, "category_wide": "Female", "category_narrow": "Tops" }
   ],
 
-  "purchases": [
-    {"PurchaseID":1,"UserID":1,"ProductID":1,"PurchaseDate":"2023-09-15T04:00:00.000Z"},
-    {"PurchaseID":2,"UserID":2,"ProductID":3,"PurchaseDate":"2023-09-20T04:00:00.000Z"},
-    {"PurchaseID":3,"UserID":1,"ProductID":2,"PurchaseDate":"2023-10-01T04:00:00.000Z"},
-    {"PurchaseID":4,"UserID":3,"ProductID":4,"PurchaseDate":"2023-10-03T04:00:00.000Z"},
-    {"PurchaseID":5,"UserID":2,"ProductID":5,"PurchaseDate":"2023-10-07T04:00:00.000Z"}
+  "purchase": [
+    { "purchase_id":1, "user_id":1, "product_id":1, "purchase_date":"2023-09-15T04:00:00.000Z", "purchase_complete": false},
+    { "purchase_id":2, "user_id":2, "product_id":3, "purchase_date":"2023-09-20T04:00:00.000Z", "purchase_complete": false },
+    { "purchase_id":3, "user_id":1, "product_id":2, "purchase_date":"2023-10-01T04:00:00.000Z", "purchase_complete": false },
+    { "purchase_id":4, "user_id":3, "product_id":4, "purchase_date":"2023-10-03T04:00:00.000Z", "purchase_complete": false },
+    { "purchase_id":5, "user_id":2, "product_id":5, "purchase_date":"2023-10-07T04:00:00.000Z", "purchase_complete": false }
   ]
 }

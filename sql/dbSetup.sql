@@ -4,39 +4,41 @@ CREATE DATABASE powerproDatabase;
 USE powerproDatabase;
 
 -- Create tables
--- 'User' table
-CREATE TABLE `User` (
-  `UserID` int AUTO_INCREMENT,
-  `Username` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
-  `FirstName` varchar(50) NOT NULL,
-  `LastName` varchar(50) NOT NULL,
-  `Street` varchar(255) NOT NULL,
-  `City` varchar(50) NOT NULL,
-  `State` varchar(50) NOT NULL,
-  `Zip` varchar(5) NOT NULL,
-  PRIMARY KEY (`UserID`)
+-- 'user' table
+CREATE TABLE `user` (
+  `user_ID` int AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `street` varchar(255) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `zip` varchar(5) NOT NULL,
+  `credits` decimal(10, 2) NOT NULL,
+  PRIMARY KEY (`user_ID`)
 );
 
--- 'Product' table
-CREATE TABLE `Product` (
-  `ProductID` int AUTO_INCREMENT,
-  `ProductName` varchar(50) NOT NULL,
-  `AvailableQuantity` int NOT NULL,
-  `Price` decimal(10, 2) NOT NULL,
-  `Popularity` int NOT NULL,
-  `Category_Wide` varchar(50) NOT NULL,
-  `Category_Narrow` varchar(50) NOT NULL,
-  PRIMARY KEY (`ProductID`)
+-- 'product' table
+CREATE TABLE `product` (
+  `product_ID` int AUTO_INCREMENT,
+  `product_name` varchar(50) NOT NULL,
+  `available_quantity` int NOT NULL,
+  `price` decimal(10, 2) NOT NULL,
+  `popularity` int NOT NULL,
+  `category_wide` varchar(50) NOT NULL,
+  `category_narrow` varchar(50) NOT NULL,
+  PRIMARY KEY (`product_ID`)
 );
 
--- 'Order' table
-CREATE TABLE `Purchase` (
-  `PurchaseID` int AUTO_INCREMENT,
-  `UserID` int NOT NULL,
-  `ProductID` int NOT NULL,
-  `PurchaseDate` date NOT NULL,
-  PRIMARY KEY (`PurchaseID`),
-  FOREIGN KEY (`UserID`) REFERENCES `User`(`UserID`),
-  FOREIGN KEY (`ProductID`) REFERENCES `Product`(`ProductID`)
+-- 'purchase' table
+CREATE TABLE `purchase` (
+  `purchase_ID` int AUTO_INCREMENT,
+  `user_ID` int NOT NULL,
+  `product_ID` int NOT NULL,
+  `purchase_date` date NOT NULL,
+  `purchase_complete` boolean NOT NULL,
+  PRIMARY KEY (`purchase_ID`),
+  FOREIGN KEY (`user_ID`) REFERENCES `user`(`user_ID`),
+  FOREIGN KEY (`product_ID`) REFERENCES `product`(`product_ID`)
 );

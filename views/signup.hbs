@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
+    <script src="/scripts/domScripts.js" defer></script>
     <header>
-        <div class="logo">
-            <h1>PowerPro</h1>
-        </div>
+        <a href="/">
+            <div class="logo">
+                <h1>PowerPro</h1>
+            </div>
+        </a>
         <div class="main-nav">
             <div class="dropdown">
                 <a href="#">Men's</a>
@@ -23,31 +26,38 @@
             <div class="dropdown">
                 <a href="#">Women's</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Tops</a></li>
-                    <li><a href="#">Bottoms</a></li>
-                    <li><a href="#">Shoes</a></li>
+                    <li><a href="/womenTops">Tops</a></li>
+                    <li><a href="/womenBottoms">Bottoms</a></li>
+                    <li><a href="/WomenShoes">Shoes</a></li>
                 </ul>
             </div>
             <div class="dropdown">
                 <a href="#">Accessories</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">HeadWear</a></li>
-                    <li><a href="#">Sleeves</a></li>
-                    <li><a href="#">Gym Bags</a></li>
+                    <li><a href="/headwear">HeadWear</a></li>
+                    <li><a href="/protectiveGear">Protective Gear</a></li>
+                    <li><a href="/gymBags">Gym Bags</a></li>
                 </ul>
+            </div>
+            <div class="dropdown">
+              <a href="#">Theme</a>
+              <ul class="dropdown-content">
+                  <li><a id="lightButton" href="#">Light</a></li>
+                  <li><a id="darkButton" href="#">Dark</a></li>
+              </ul>
             </div>
         <nav>
             <button class="menu" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
                 <a href="#">My Account</a>
                 <a href="/signup">Sign Up</a>
-                <a href="#">Cart</a>
+                <a href="/cart">Cart</a>
             </div>
         </nav>
     </header>
 
     <div id="formDialogue">
-      <form action="/signup" method="post">
+      <form action="/signup" method="post" autocomplete="off">
         <div class="form-group">
           <label class="labels" for="userName">Username: </label>
           <input class="textInput" type="username" id="userName" name="username" required>
@@ -61,8 +71,6 @@
           {{#if passwordError}}
             <p class="validationError">{{passwordError}}</p>
           {{/if}}
-        </div>
-        <div class="form-group">
           <label class="labels" for="passwordConfirmation">Confirm Password: </label>
           <input class="textInput password" type="passwordConfirm" id="passwordConfirmation" name="passwordConfirm" required>
           {{#if passwordError}}
@@ -72,27 +80,25 @@
         <div class="form-group">
           <label class="labels" for="firstName">First Name: </label>
           <input class="textInput" type="firstname" id="firstName" name="firstname" required>
-        </div>
-        <div class="form-group">
           <label class="labels" for="lastName">Last Name: </label>
           <input class="textInput" type="lastname" id="lastName" name="lastname" required>
-        </div>        <div class="form-group">
+        </div>        
+        <div class="form-group">
           <label class="labels" for="street">Street: </label>
           <input class="textInput" type="streetAddress" id="street" name="streetAddress" required>
-        </div>
-        <div class="form-group">
           <label class="labels" for="city">City: </label>
           <input class="textInput" type="cityAddress" id="city" name="cityAddress" required>
-        </div>
-        <div class="form-group">
           <label class="labels" for="state">State: </label>
           <input class="textInput" type="stateAddress" id="state" name="stateAddress" required>
-        </div>
-        <div class="form-group">
           <label class="labels" for="zipCode">Zip: </label>
           <input class="textInput" type="zipAddress" id="zipCode" name="zipAddress" required>
         </div>
-        <button type="submit" class="formButton">Save</button>
+        {{#if errorMessage}}
+          <p class="validationError">{{errorMessage}}</p>
+        {{/if}}
+        <div class="form-group">
+          <button type="submit" class="formButton">Save</button>
+        </div>
       </form>
     </div>
     
@@ -108,7 +114,6 @@
             <a href="/shipping">Shipping and Returns</a>
         </div>
     </footer>
-    
-    <script src="/scripts/domScripts.js"></script>
+        <script> history.pushState({}, '', "/signup") </script>
 </body>
 </html>

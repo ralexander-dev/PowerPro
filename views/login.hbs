@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
-    <script src="/scripts/domScripts.js" defer></script>
     <header>
-        <div class="logo">
-            <h1>PowerPro</h1>
-        </div>
+        <a href="/">
+            <div class="logo">
+                <h1>PowerPro</h1>
+            </div>
+        </a>
         <div class="main-nav">
             <div class="dropdown">
                 <a href="#">Men's</a>
@@ -46,24 +47,25 @@
             </div>
         </nav>
     </header>
-    
-    <div id="utilBar">
-        <section class="search-bar">
-            <input type="text" placeholder="Search">
-        </section>
-        <div id="themeSwitcher">
-            <input type="checkbox" id="themeInput">
-            <label for="themeInput" id="themeBtn"></label>
-            
+
+    <div id="formDialogue">
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label class="labels" for="userName">Username: </label>
+          <input class="textInput" type="username" id="userName" name="username" required>
         </div>
+        <div class="form-group">
+          <label class="labels" for="passwordInput">Password: </label>
+          <input class="textInput password" type="password" id="passwordInput" name="password" required>
+        </div>
+        <button type="submit" class="formButton">Save</button>
+      </form>
+      <script>
+        {{#if errorMessage}}
+            alert("{{errorMessage}}");
+        {{/if}}
+      </script> 
     </div>
-    
-    <section class="best-selling">
-        <h2>Best Selling</h2>
-        <div id="products">
-            <script src="scripts/dataUtils/bestSelling.js"></script>
-        </div>
-    </section>
     
     <footer>
         <div class="social-icons">
@@ -78,6 +80,7 @@
         </div>
     </footer>
     
-    <script> history.pushState({}, '', "/") </script>
+    <script src="/scripts/domScripts.js"></script>
+    <script> history.pushState({}, '', "/login") </script>
 </body>
 </html>

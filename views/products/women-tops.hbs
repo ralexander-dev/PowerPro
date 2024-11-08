@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerPro</title>
+    <title>Women's Tops - PowerPro</title>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
-    <script src="/scripts/domScripts.js" defer></script>
     <header>
         <div class="logo">
             <h1>PowerPro</h1>
@@ -46,25 +45,19 @@
             </div>
         </nav>
     </header>
-    
-    <div id="utilBar">
-        <section class="search-bar">
-            <input type="text" placeholder="Search">
-        </section>
-        <div id="themeSwitcher">
-            <input type="checkbox" id="themeInput">
-            <label for="themeInput" id="themeBtn"></label>
-            
+
+    <section class="content">
+        <h2>Women's Tops</h2>
+        <div class="product-grid" id="products">
+            <script src="/scripts/dataUtils/products.js"></script>
+            <script> displayFilteredProducts("Female" , "Tops") </script>
         </div>
-    </div>
-    
-    <section class="best-selling">
-        <h2>Best Selling</h2>
-        <div id="products">
-            <script src="scripts/dataUtils/bestSelling.js"></script>
+        <div class="additional-info">
+            <h3>Featured Materials:</h3>
+            <p>Our tops are made with breathable, moisture-wicking fabric for ultimate comfort during intense workouts.</p>
         </div>
     </section>
-    
+
     <footer>
         <div class="social-icons">
             <a href="https://www.instagram.com/your_profile" id="ig">IG</a>
@@ -77,7 +70,8 @@
             <a href="/shipping">Shipping and Returns</a>
         </div>
     </footer>
-    
-    <script> history.pushState({}, '', "/") </script>
+
+    <script src="/scripts/domScripts.js"></script>
+    <script> history.pushState({}, '', "/womenTops") </script>
 </body>
 </html>
