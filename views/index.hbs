@@ -37,13 +37,6 @@
                     <li><a href="/gymBags">Gym Bags</a></li>
                 </ul>
             </div>
-            <div class="dropdown">
-                <a href="#">Theme</a>
-                <ul class="dropdown-content">
-                    <li><a id="lightButton" href="#">Light</a></li>
-                    <li><a id="darkButton" href="#">Dark</a></li>
-                </ul>
-            </div>
         <nav>
             <button class="menu" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
@@ -54,9 +47,15 @@
         </nav>
     </header>
     
-    <section class="search-bar">
-        <input type="text" placeholder="Search">
-    </section>
+    <div id="utilBar">
+        <section class="search-bar">
+            <input type="text" placeholder="Search">
+        </section>
+        <div id="themeSwitcher">
+            <input type="checkbox" id="themeInput">
+            <label for="themeInput" id="themeBtn"></label>
+        </div>
+    </div>
     
     <section class="best-selling">
         <h2>Best Selling</h2>

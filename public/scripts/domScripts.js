@@ -9,7 +9,16 @@
 
 const darkButton = document.getElementById('darkButton');
 const lightButton = document.getElementById('lightButton');
+const themeBtn = document.getElementById('themeBtn');
 const body = document.body;
+
+if(themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    const theme = body.classList.contains('darkTheme') ? 'lightTheme' : 'darkTheme';
+    body.classList.replace(body.classList.contains('darkTheme') ? 'darkTheme' : 'lightTheme', theme);
+    localStorage.setItem('theme', theme);
+  });
+}
 
 if(darkButton) {
   darkButton.addEventListener('click', () => {
@@ -18,10 +27,8 @@ if(darkButton) {
   });
 }
 
-if (lightButton) {
+if(lightButton) {
   lightButton.addEventListener('click', () => {
-    body.style.transition = 'background-color 1s';
-    body.style.transition = 'color 1s';
     body.classList.replace('darkTheme', 'lightTheme');
     localStorage.setItem('theme', 'lightTheme');
   });
