@@ -93,7 +93,6 @@ function getPurchases(callback) {
         });
     });
 }
-
 // ! NOT YET IMPLEMENTED, 
 function getCart(user_ID, callback) {
     const conn = createConnection();

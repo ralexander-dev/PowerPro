@@ -4,7 +4,7 @@
  Description: 
   This file is the entry point for the application. It sets up the express server and defines the routes.
  Date Created: 2024-09-26
- Last Modified: 2024-10-17
+ Last Modified: 2024-10-16
 ***********************************************************************************************************************************/
 
 // imports
@@ -51,7 +51,6 @@ app.get('/cart', authController.authMiddleware, (req, res) => { res.render('cart
 // signup POST route -- handles form submission
 app.post('/signup', authController.register);
 app.post('/login', authController.login);
-
 
 // data routes
 // users route -- serves users table from the database as JSON
