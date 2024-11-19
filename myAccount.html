@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // Checking if user is logged in 
+        const userLoggedIn = sessionStorage.getItem("user"); // Assuming session storage is used, adjust based on how your session works.
+
+        if (!userLoggedIn) {
+            window.location.href = "/login";  // Redirect to login if not authenticated
+        }
+    </script>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="/scripts/domScripts.js" defer></script>
+    <header>
+        <div class="logo">
+            <h1>PowerPro</h1>
+        </div>
+        <div class="main-nav">
+            <div class="dropdown">
+                <a href="#">Men's</a>
+                <ul class="dropdown-content">
+                    <li><a href="/menTops">Tops</a></li>
+                    <li><a href="/menBottoms">Bottoms</a></li>
+                    <li><a href="/menShoes">Shoes</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Women's</a>
+                <ul class="dropdown-content">
+                    <li><a href="/womenTops">Tops</a></li>
+                    <li><a href="/womenBottoms">Bottoms</a></li>
+                    <li><a href="/WomenShoes">Shoes</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">Accessories</a>
+                <ul class="dropdown-content">
+                    <li><a href="/headwear">HeadWear</a></li>
+                    <li><a href="/protectiveGear">Protective Gear</a></li>
+                    <li><a href="/gymBags">Gym Bags</a></li>
+                </ul>
+            </div>
+        <nav>
+            <button class="menu" onclick="toggleMenu()">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="/myAccount">My Account</a>
+                <a href="/signup">Sign Up</a>
+                <a href="/cart">Cart</a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="dashboard">
+        <div class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#orders">My Orders</a></li>
+                <li><a href="#saved-items">Saved Items</a></li>
+                <li><a href="#account-settings">Account Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <section id="orders" class="dashboard-section">
+                <h3>My Orders</h3>
+                <p>No orders placed yet.</p>
+                <button class="cartButton">View Orders</button>
+            </section>
+
+            <section id="saved-items" class="dashboard-section">
+                <h3>Saved Items</h3>
+                <p>You don't have any saved items yet.</p>
+                <button class="cartButton">View Saved Items</button>
+            </section>
+
+            <section id="account-settings" class="dashboard-section">
+            <h3>Account Settings</h3>
+                <div class="personal-info">
+                    <div class="info-item">
+                        <label>Full Name</label>
+                        <p id="fullNameDisplay">John Doe</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Email</label>
+                        <p id="emailDisplay">john.doe@example.com</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Address</label>
+                        <p id="addressDisplay">123 Main St, City, State</p>
+                    </div>
+                </div>
+                <button type="button" class="button" id="editButton" onclick="toggleEditMode()">Make Changes</button>
+
+                <!-- Editable form for updating info, hidden initially -->
+                <form id="edit-info-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" value="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="john.doe@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" value="123 Main St, City, State">
+                    </div>
+                    <button type="button" class="button" onclick="saveChanges()">Save Changes</button>
+                </form>
+
+                <div class="account-options">
+                    <button type="button" class="button change-password" onclick="changePassword()">Change Password</button>
+                    <button type="button" class="button sign-out" onclick="signOut()">Sign Out</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div>&copy; 2024 PowerPro</div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/your_profile" id="ig">IG</a>
+            <a href="https://www.twitter.com/your_profile" id="x">X</a>
+            <a href="https://www.facebook.com/your_profile" id="fb">FB</a>
+        </div>
+        <div class="footer-links">
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/shipping">Shipping and Returns</a>
+        </div>
+    </footer>
+</body>
+</html>
