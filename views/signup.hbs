@@ -9,11 +9,12 @@
 <body>
     <script src="/scripts/domScripts.js" defer></script>
     <header>
-        <a href="/">
-            <div class="logo">
-                <h1>PowerPro</h1>
-            </div>
-        </a>
+        <div>
+            <a href="/" class="logo">
+              <h1>PowerPro</h1>
+              <img src="/images/Logo/PowerPro.png" alt="PowerPro" id="logoImg">
+            </a>
+        </div>
         <div class="main-nav">
             <div class="dropdown">
                 <a href="#">Men's</a>
@@ -49,12 +50,19 @@
         <nav>
             <button class="menu" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
-                <a href="#">My Account</a>
+                <a href="/myAccount">My Account</a>
                 <a href="/signup">Sign Up</a>
                 <a href="/cart">Cart</a>
             </div>
         </nav>
     </header>
+
+    <div id="utilBar">
+        <div id="themeSwitcher-alt">
+            <input type="checkbox" id="themeInput">
+            <label for="themeInput" id="themeBtn"></label>
+        </div>
+    </div>
 
     <div id="formDialogue">
       <form action="/signup" method="post" autocomplete="off">

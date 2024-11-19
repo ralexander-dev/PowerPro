@@ -9,8 +9,11 @@
 <body>
     <script src="/scripts/domScripts.js" defer></script>
     <header>
-        <div class="logo">
-            <h1>PowerPro</h1>
+        <div>
+            <a href="/" class="logo">
+              <h1>PowerPro</h1>
+              <img src="/images/Logo/PowerPro.png" alt="PowerPro" id="logoImg">
+            </a>
         </div>
         <div class="main-nav">
             <div class="dropdown">
@@ -46,6 +49,13 @@
             </div>
         </nav>
     </header>
+
+    <div id="utilBar">
+        <div id="themeSwitcher-alt">
+            <input type="checkbox" id="themeInput">
+            <label for="themeInput" id="themeBtn"></label>
+        </div>
+    </div>
 
     <div id="dashboard">
         <div class="sidebar">

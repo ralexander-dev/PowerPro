@@ -8,8 +8,11 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>PowerPro</h1>
+        <div>
+            <a href="/" class="logo">
+              <h1>PowerPro</h1>
+              <img src="/images/Logo/PowerPro.png" alt="PowerPro" id="logoImg">
+            </a>
         </div>
         <div class="main-nav">
             <div class="dropdown">
@@ -39,12 +42,20 @@
         <nav>
             <button class="menu" onclick="toggleMenu()">☰</button>
             <div class="nav-links" id="navLinks">
-                <a href="#">My Account</a>
+                <a href="/myAccount">My Account</a>
                 <a href="/signup">Sign Up</a>
                 <a href="/cart">Cart</a>
             </div>
         </nav>
     </header>
+
+    <div id="utilBar">
+        <div id="themeSwitcher-alt">
+            <input type="checkbox" id="themeInput">
+            <label for="themeInput" id="themeBtn"></label>
+        </div>
+    </div>
+
     <section class="content">
         <h2>Protective Gear</h2>
         <div class="product-grid">
