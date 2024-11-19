@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script>
-        // Checking if user is logged in 
-        const userLoggedIn = sessionStorage.getItem("user"); // Assuming session storage is used, adjust based on how your session works.
-
-        if (!userLoggedIn) {
-            window.location.href = "/login";  // Redirect to login if not authenticated
-        }
-    </script>   
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PowerPro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
     <script src="/scripts/domScripts.js" defer></script>
